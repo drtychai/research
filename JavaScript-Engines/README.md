@@ -19,6 +19,13 @@ Modern engines will contain, _at least_, the to following components:
 
 
 ## Research Focus
+### Fuzzing
+Fuzzers are often divided into two (2) categores, generative- or mutation-based; however, we'll approach the topic from a further abstracted perspective. We chose to break down a *Fuzzer*, _F_ with based on:
 
-[... WIP ...]   
+- Explorability of Target's CFG/DFG
+- Exploitability of Unsoundness
+
+From this perspective, we can both address the _direction_ and _form_ our fuzzer takes.
+
+
 
