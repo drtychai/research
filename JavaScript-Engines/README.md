@@ -2,7 +2,7 @@
 ## Fuzzing
 Target goal: _Detect unsound [runtime] behavior in the core constituents of JavaScript engines_
 
-Fuzzers are often divided into two (2) categores, generative- or mutation-based; however, we'll approach the topic from a further abstracted perspective. We chose to break down a fuzzer, `Fz: X -> Y`, into the following broad functionalities:
+Fuzzers are often divided into two (2) categories: generative- or mutation-based; however, we'll approach the topic from a further abstracted perspective. We chose to break down a fuzzer, `Fz: X -> Y`, into the following broad functionalities:
 
 - Explorability of `Y`-space (i.e., CFG/DFG)
 - Exploitability of Unsoundness
@@ -15,7 +15,7 @@ From this perspective, we can both address the _direction_ and _form_ our fuzzer
 - **Insertion**: Insert newly generated IR
 - **Concat**: Combine two existing programs
 - **Splice**: Insert IR from part of another program
-- **Type**: (Only if each CFG path is a **_type_**) Mutate blocks to improve probability of evaluating new type, using any of the above
+- **Type**: (Only if each CFG path is a **_type_**) Mutate *paths* to improve probability of evaluating new type, using any of the above
 - **Minimize**: _WIP -- Not a concern at this stage of research; subject of future work_
 
 ### Proposed Type System
@@ -38,6 +38,8 @@ Options:
 1. Hook fuzzer to standard binary (JS engine's parser responsible for syntax validation)
 1. Hook fuzzer as a specific point, e.g., at the Interpreter (fuzzer responsible for syntax validation)
   - This could be expanded further to perform _high-targeted fuzzing_ against, e.g., only the JIT compiler
+  - Note: JIT compilers rely on relevant type information, which is not always present from a single invocation. Without it,
+  JIT compilers may behave differently.
 
 ## JS Engines: Background
 **Purpose:** To _parse_ and _execute_ JavaScript code
