@@ -1,0 +1,166 @@
+<svg width="865pt" height="705pt" viewBox="0.00 0.00 865.00 705.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 701)">
+<title>D</title>
+<text text-anchor="start" x="421.5" y="-62.4" font-family="Times,serif" font-size="14.00" fill="#000000">    </text>
+<text text-anchor="start" x="403.6255" y="-34.4" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Hyper-V</text>
+<text text-anchor="start" x="352.5059" y="-6.4" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">High-Level Architecture</text>
+<text text-anchor="start" x="490.4941" y="-6.4" font-family="Times,serif" font-size="14.00" fill="#000000">    </text>
+<!-- some_node -->
+<g id="node1" class="node">
+<title>some_node</title>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-246 13,-688 266,-688 266,-246 13,-246"></polygon>
+<polygon fill="#da70d6" stroke="transparent" stroke-width="3" points="16.5,-249.5 16.5,-684.5 262.5,-684.5 262.5,-249.5 16.5,-249.5"></polygon>
+<text text-anchor="start" x="100.0263" y="-649.8" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Root Partition</text>
+<polygon fill="#edf2f9" stroke="transparent" stroke-width="3" points="18.5,-589.5 18.5,-621.5 260.5,-621.5 260.5,-589.5 18.5,-589.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-590.5 19.5,-620.5 259.5,-620.5 259.5,-590.5 19.5,-590.5"></polygon>
+<text text-anchor="start" x="88.7654" y="-601.3" font-family="Times,serif" font-size="14.00" fill="#000000">User Applications</text>
+<polygon fill="#f7de9c" stroke="transparent" stroke-width="2" points="18.5,-539.5 18.5,-587.5 260.5,-587.5 260.5,-539.5 18.5,-539.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-540.5 19.5,-586.5 259.5,-586.5 259.5,-540.5 19.5,-540.5"></polygon>
+<text text-anchor="start" x="120.4565" y="-559.3" font-family="Times,serif" font-size="14.00" fill="#000000">Kernel</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="18.5,-489.5 18.5,-537.5 260.5,-537.5 260.5,-489.5 18.5,-489.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-490.5 19.5,-536.5 259.5,-536.5 259.5,-490.5 19.5,-490.5"></polygon>
+<text text-anchor="start" x="117.3338" y="-509.3" font-family="Times,serif" font-size="14.00" fill="#000000">VMBus</text>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-252.5 19.5,-486.5 259.5,-486.5 259.5,-252.5 19.5,-252.5"></polygon>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="22.5,-255.5 22.5,-483.5 256.5,-483.5 256.5,-255.5 22.5,-255.5"></polygon>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="24.5,-459.5 24.5,-481.5 254.5,-481.5 254.5,-459.5 24.5,-459.5"></polygon>
+<text text-anchor="start" x="83.3215" y="-467.3" font-family="Times,serif" font-style="italic" text-decoration="underline" font-size="14.00" fill="#000000">Virtualization Stack</text>
+<polygon fill="#e48312" stroke="transparent" stroke-width="2" points="24.5,-410.5 24.5,-457.5 254.5,-457.5 254.5,-410.5 24.5,-410.5"></polygon>
+<polygon fill="none" stroke="#000000" points="24.5,-410.5 24.5,-457.5 254.5,-457.5 254.5,-410.5 24.5,-410.5"></polygon>
+<text text-anchor="start" x="67.1935" y="-438.2" font-family="Times,serif" font-size="14.00" fill="#000000">VM Management Service</text>
+<text text-anchor="start" x="113.4502" y="-421.4" font-family="Times,serif" font-size="14.00" fill="#000000">(VMMS)</text>
+<polygon fill="#e48312" stroke="transparent" points="24.5,-361.5 24.5,-408.5 254.5,-408.5 254.5,-361.5 24.5,-361.5"></polygon>
+<polygon fill="none" stroke="#000000" points="24.5,-361.5 24.5,-408.5 254.5,-408.5 254.5,-361.5 24.5,-361.5"></polygon>
+<text text-anchor="start" x="76.1388" y="-389.2" font-family="Times,serif" font-size="14.00" fill="#000000">VM Worker Processes</text>
+<text text-anchor="start" x="110.3429" y="-372.4" font-family="Times,serif" font-size="14.00" fill="#000000">(VMWPs)</text>
+<polygon fill="#e48312" stroke="transparent" points="24.5,-313.5 24.5,-359.5 254.5,-359.5 254.5,-313.5 24.5,-313.5"></polygon>
+<polygon fill="none" stroke="#000000" points="24.5,-313.5 24.5,-359.5 254.5,-359.5 254.5,-313.5 24.5,-313.5"></polygon>
+<text text-anchor="start" x="40.7699" y="-340.7" font-family="Times,serif" font-size="14.00" fill="#000000">Virtualization Infrastructure Driver</text>
+<text text-anchor="start" x="122.4025" y="-323.9" font-family="Times,serif" font-size="14.00" fill="#000000">(VID)</text>
+<polygon fill="#e48312" stroke="transparent" points="24.5,-265.5 24.5,-311.5 254.5,-311.5 254.5,-265.5 24.5,-265.5"></polygon>
+<polygon fill="none" stroke="#000000" points="24.5,-265.5 24.5,-311.5 254.5,-311.5 254.5,-265.5 24.5,-265.5"></polygon>
+<text text-anchor="start" x="49.3071" y="-292.7" font-family="Times,serif" font-size="14.00" fill="#000000">Virtualization Service Providers</text>
+<text text-anchor="start" x="119.2812" y="-275.9" font-family="Times,serif" font-size="14.00" fill="#000000">(VSPs)</text>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="272,-246 272,-688 458,-688 458,-246 272,-246"></polygon>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="275.5,-249.5 275.5,-684.5 454.5,-684.5 454.5,-249.5 275.5,-249.5"></polygon>
+<text text-anchor="start" x="301.0417" y="-654.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Enlightend (Windows)</text>
+<text text-anchor="start" x="318.331" y="-640.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Child Partition 1</text>
+<polygon fill="#edf2f9" stroke="transparent" stroke-width="3" points="277.5,-590.5 277.5,-620.5 452.5,-620.5 452.5,-590.5 277.5,-590.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-591.5 278.5,-619.5 451.5,-619.5 451.5,-591.5 278.5,-591.5"></polygon>
+<text text-anchor="start" x="314.2654" y="-601.3" font-family="Times,serif" font-size="14.00" fill="#000000">User Applications</text>
+<polygon fill="#f7de9c" stroke="transparent" stroke-width="2" points="277.5,-538.5 277.5,-588.5 452.5,-588.5 452.5,-538.5 277.5,-538.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-539.5 278.5,-587.5 451.5,-587.5 451.5,-539.5 278.5,-539.5"></polygon>
+<text text-anchor="start" x="345.9565" y="-559.3" font-family="Times,serif" font-size="14.00" fill="#000000">Kernel</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="277.5,-486.5 277.5,-536.5 452.5,-536.5 452.5,-486.5 277.5,-486.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-487.5 278.5,-535.5 451.5,-535.5 451.5,-487.5 278.5,-487.5"></polygon>
+<text text-anchor="start" x="342.8338" y="-507.3" font-family="Times,serif" font-size="14.00" fill="#000000">VMBus</text>
+<polygon fill="#cccccc" stroke="transparent" stroke-width="2" points="277.5,-454.5 277.5,-484.5 452.5,-484.5 452.5,-454.5 277.5,-454.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-455.5 278.5,-483.5 451.5,-483.5 451.5,-455.5 278.5,-455.5"></polygon>
+<text text-anchor="start" x="338.3699" y="-465.3" font-family="Times,serif" font-size="14.00" fill="#000000">I/O Stack</text>
+<polygon fill="#cccccc" stroke="transparent" stroke-width="2" points="277.5,-422.5 277.5,-452.5 452.5,-452.5 452.5,-422.5 277.5,-422.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-423.5 278.5,-451.5 451.5,-451.5 451.5,-423.5 278.5,-423.5"></polygon>
+<text text-anchor="start" x="344.0112" y="-433.3" font-family="Times,serif" font-size="14.00" fill="#000000">Drivers</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="277.5,-328.5 277.5,-420.5 452.5,-420.5 452.5,-328.5 277.5,-328.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-329.5 278.5,-419.5 451.5,-419.5 451.5,-329.5 278.5,-329.5"></polygon>
+<text text-anchor="start" x="303.3839" y="-403.9" font-family="Times,serif" font-size="14.00" fill="#000000">Virtualization Service</text>
+<text text-anchor="start" x="297.3478" y="-387.1" font-family="Times,serif" font-size="14.00" fill="#000000">Consumers / Integration</text>
+<text text-anchor="start" x="329.6115" y="-370.3" font-family="Times,serif" font-size="14.00" fill="#000000">Components</text>
+<text text-anchor="start" x="333.115" y="-336.7" font-family="Times,serif" font-size="14.00" fill="#000000">(VSPs/ICs)</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="277.5,-251.5 277.5,-326.5 452.5,-326.5 452.5,-251.5 277.5,-251.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="278.5,-252.5 278.5,-325.5 451.5,-325.5 451.5,-252.5 278.5,-252.5"></polygon>
+<text text-anchor="start" x="304.933" y="-309.9" font-family="Times,serif" font-size="14.00" fill="#000000">Windows Hypervisor</text>
+<text text-anchor="start" x="317.3951" y="-293.1" font-family="Times,serif" font-size="14.00" fill="#000000">Interface Library</text>
+<text text-anchor="start" x="339.7335" y="-259.5" font-family="Times,serif" font-size="14.00" fill="#000000">(WinHv)</text>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="464,-246 464,-688 650,-688 650,-246 464,-246"></polygon>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="467.5,-249.5 467.5,-684.5 646.5,-684.5 646.5,-249.5 467.5,-249.5"></polygon>
+<text text-anchor="start" x="503.1483" y="-654.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Enlightend (Linux)</text>
+<text text-anchor="start" x="510.331" y="-640.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Child Partition 2</text>
+<polygon fill="#edf2f9" stroke="transparent" stroke-width="3" points="469.5,-590.5 469.5,-620.5 644.5,-620.5 644.5,-590.5 469.5,-590.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-591.5 470.5,-619.5 643.5,-619.5 643.5,-591.5 470.5,-591.5"></polygon>
+<text text-anchor="start" x="506.2654" y="-601.3" font-family="Times,serif" font-size="14.00" fill="#000000">User Applications</text>
+<polygon fill="#f7de9c" stroke="transparent" stroke-width="2" points="469.5,-538.5 469.5,-588.5 644.5,-588.5 644.5,-538.5 469.5,-538.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-539.5 470.5,-587.5 643.5,-587.5 643.5,-539.5 470.5,-539.5"></polygon>
+<text text-anchor="start" x="537.9565" y="-559.3" font-family="Times,serif" font-size="14.00" fill="#000000">Kernel</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="469.5,-486.5 469.5,-536.5 644.5,-536.5 644.5,-486.5 469.5,-486.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-487.5 470.5,-535.5 643.5,-535.5 643.5,-487.5 470.5,-487.5"></polygon>
+<text text-anchor="start" x="534.8338" y="-507.3" font-family="Times,serif" font-size="14.00" fill="#000000">VMBus</text>
+<polygon fill="#cccccc" stroke="transparent" stroke-width="2" points="469.5,-454.5 469.5,-484.5 644.5,-484.5 644.5,-454.5 469.5,-454.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-455.5 470.5,-483.5 643.5,-483.5 643.5,-455.5 470.5,-455.5"></polygon>
+<text text-anchor="start" x="530.3699" y="-465.3" font-family="Times,serif" font-size="14.00" fill="#000000">I/O Stack</text>
+<polygon fill="#cccccc" stroke="transparent" stroke-width="2" points="469.5,-422.5 469.5,-452.5 644.5,-452.5 644.5,-422.5 469.5,-422.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-423.5 470.5,-451.5 643.5,-451.5 643.5,-423.5 470.5,-423.5"></polygon>
+<text text-anchor="start" x="536.0112" y="-433.3" font-family="Times,serif" font-size="14.00" fill="#000000">Drivers</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="469.5,-328.5 469.5,-420.5 644.5,-420.5 644.5,-328.5 469.5,-328.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-329.5 470.5,-419.5 643.5,-419.5 643.5,-329.5 470.5,-329.5"></polygon>
+<text text-anchor="start" x="476.9123" y="-403.9" font-family="Times,serif" font-size="14.00" fill="#000000">Linux Virtualization Service</text>
+<text text-anchor="start" x="489.3478" y="-387.1" font-family="Times,serif" font-size="14.00" fill="#000000">Consumers / Integration</text>
+<text text-anchor="start" x="521.6115" y="-370.3" font-family="Times,serif" font-size="14.00" fill="#000000">Components</text>
+<text text-anchor="start" x="506.6434" y="-336.7" font-family="Times,serif" font-size="14.00" fill="#000000">(Linux VSPs/ICs)</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="469.5,-251.5 469.5,-326.5 644.5,-326.5 644.5,-251.5 469.5,-251.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="470.5,-252.5 470.5,-325.5 643.5,-325.5 643.5,-252.5 470.5,-252.5"></polygon>
+<text text-anchor="start" x="507.0396" y="-309.9" font-family="Times,serif" font-size="14.00" fill="#000000">Linux Hypervisor</text>
+<text text-anchor="start" x="509.3951" y="-293.1" font-family="Times,serif" font-size="14.00" fill="#000000">Interface Library</text>
+<text text-anchor="start" x="527.0645" y="-259.5" font-family="Times,serif" font-size="14.00" fill="#000000">(LinuxHv)</text>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="656,-246 656,-688 842,-688 842,-246 656,-246"></polygon>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="659.5,-249.5 659.5,-684.5 838.5,-684.5 838.5,-249.5 659.5,-249.5"></polygon>
+<text text-anchor="start" x="707.7889" y="-655.4" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Unenlightened</text>
+<text text-anchor="start" x="702.331" y="-641.4" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Child Partition 3</text>
+<polygon fill="#edf2f9" stroke="transparent" stroke-width="3" points="661.5,-588.5 661.5,-621.5 836.5,-621.5 836.5,-588.5 661.5,-588.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="662.5,-589.5 662.5,-620.5 835.5,-620.5 835.5,-589.5 662.5,-589.5"></polygon>
+<text text-anchor="start" x="698.2654" y="-600.8" font-family="Times,serif" font-size="14.00" fill="#000000">User Applications</text>
+<polygon fill="#f7de9c" stroke="transparent" stroke-width="2" points="661.5,-537.5 661.5,-586.5 836.5,-586.5 836.5,-537.5 661.5,-537.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="662.5,-538.5 662.5,-585.5 835.5,-585.5 835.5,-538.5 662.5,-538.5"></polygon>
+<text text-anchor="start" x="729.9565" y="-557.8" font-family="Times,serif" font-size="14.00" fill="#000000">Kernel</text>
+<polygon fill="#fed15d" stroke="transparent" stroke-width="2" points="661.5,-486.5 661.5,-535.5 836.5,-535.5 836.5,-486.5 661.5,-486.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="662.5,-487.5 662.5,-534.5 835.5,-534.5 835.5,-487.5 662.5,-487.5"></polygon>
+<text text-anchor="start" x="726.8338" y="-506.8" font-family="Times,serif" font-size="14.00" fill="#000000">VMBus</text>
+<polygon fill="#add8e6" stroke="transparent" points="11.5,-147.5 11.5,-241.5 846.5,-241.5 846.5,-147.5 11.5,-147.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-149 13,-240 845,-240 845,-149 13,-149"></polygon>
+<text text-anchor="start" x="397.5112" y="-220.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Hypervisor</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="3" points="18.5,-154.5 18.5,-212.5 127.5,-212.5 127.5,-154.5 18.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-155.5 19.5,-211.5 126.5,-211.5 126.5,-155.5 19.5,-155.5"></polygon>
+<text text-anchor="start" x="42.6816" y="-179.3" font-family="Times,serif" font-size="14.00" fill="#000000">Hypercalls</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="129.5,-154.5 129.5,-212.5 324.5,-212.5 324.5,-154.5 129.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="130.5,-155.5 130.5,-211.5 323.5,-211.5 323.5,-155.5 130.5,-155.5"></polygon>
+<text text-anchor="start" x="153.5175" y="-187.7" font-family="Times,serif" font-size="14.00" fill="#000000">Memory Service Routines</text>
+<text text-anchor="start" x="204.8352" y="-170.9" font-family="Times,serif" font-size="14.00" fill="#000000">(MSRs)</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="326.5,-154.5 326.5,-212.5 517.5,-212.5 517.5,-154.5 326.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="327.5,-155.5 327.5,-211.5 516.5,-211.5 516.5,-155.5 327.5,-155.5"></polygon>
+<text text-anchor="start" x="350.6651" y="-195.9" font-family="Times,serif" font-size="14.00" fill="#000000">Advanced Programmable</text>
+<text text-anchor="start" x="365.2391" y="-179.1" font-family="Times,serif" font-size="14.00" fill="#000000"> Interrupt Controller</text>
+<text text-anchor="start" x="401.3962" y="-162.3" font-family="Times,serif" font-size="14.00" fill="#000000">(APIC)</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="519.5,-154.5 519.5,-212.5 623.5,-212.5 623.5,-154.5 519.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="520.5,-155.5 520.5,-211.5 622.5,-211.5 622.5,-155.5 520.5,-155.5"></polygon>
+<text text-anchor="start" x="543.5112" y="-179.3" font-family="Times,serif" font-size="14.00" fill="#000000">Scheduler</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="625.5,-154.5 625.5,-212.5 740.5,-212.5 740.5,-154.5 625.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="626.5,-155.5 626.5,-211.5 739.5,-211.5 739.5,-155.5 626.5,-155.5"></polygon>
+<text text-anchor="start" x="660.0645" y="-187.7" font-family="Times,serif" font-size="14.00" fill="#000000">Address</text>
+<text text-anchor="start" x="649.5652" y="-170.9" font-family="Times,serif" font-size="14.00" fill="#000000">Managment</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="742.5,-154.5 742.5,-212.5 839.5,-212.5 839.5,-154.5 742.5,-154.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="743.5,-155.5 743.5,-211.5 838.5,-211.5 838.5,-155.5 743.5,-155.5"></polygon>
+<text text-anchor="start" x="766.8899" y="-187.7" font-family="Times,serif" font-size="14.00" fill="#000000">Partition</text>
+<text text-anchor="start" x="766.1255" y="-170.9" font-family="Times,serif" font-size="14.00" fill="#000000">Manager</text>
+<polygon fill="#c0c0c0" stroke="transparent" points="11.5,-84.5 11.5,-144.5 846.5,-144.5 846.5,-84.5 11.5,-84.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-86 13,-143 845,-143 845,-86 13,-86"></polygon>
+<text text-anchor="start" x="280.3116" y="-123.9" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Physical (Bare-Metal) Host</text>
+<text text-anchor="start" x="450.2542" y="-123.9" font-family="Times,serif" font-size="14.00" fill="#000000">( Intel-VT / AMD-V )</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="3" points="18.5,-91.5 18.5,-115.5 181.5,-115.5 181.5,-91.5 18.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="19.5,-92.5 19.5,-114.5 180.5,-114.5 180.5,-92.5 19.5,-92.5"></polygon>
+<text text-anchor="start" x="60.1546" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">Network Card</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="183.5,-91.5 183.5,-115.5 299.5,-115.5 299.5,-91.5 183.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="184.5,-92.5 184.5,-114.5 298.5,-114.5 298.5,-92.5 184.5,-92.5"></polygon>
+<text text-anchor="start" x="225.1648" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">CPUs</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="301.5,-91.5 301.5,-115.5 430.5,-115.5 430.5,-91.5 301.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="302.5,-92.5 302.5,-114.5 429.5,-114.5 429.5,-92.5 302.5,-92.5"></polygon>
+<text text-anchor="start" x="343.4572" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">Devices</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="432.5,-91.5 432.5,-115.5 526.5,-115.5 526.5,-91.5 432.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="433.5,-92.5 433.5,-114.5 525.5,-114.5 525.5,-92.5 433.5,-92.5"></polygon>
+<text text-anchor="start" x="474.25" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">...</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="528.5,-91.5 528.5,-115.5 711.5,-115.5 711.5,-91.5 528.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="529.5,-92.5 529.5,-114.5 710.5,-114.5 710.5,-92.5 529.5,-92.5"></polygon>
+<text text-anchor="start" x="570.426" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">Physical Memory</text>
+<polygon fill="#e7e7e8" stroke="transparent" stroke-width="2" points="713.5,-91.5 713.5,-115.5 839.5,-115.5 839.5,-91.5 713.5,-91.5"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="2" points="714.5,-92.5 714.5,-114.5 838.5,-114.5 838.5,-92.5 714.5,-92.5"></polygon>
+<text text-anchor="start" x="755.1185" y="-98.9" font-family="Times,serif" font-size="14.00" fill="#000000">Storage</text>
+</g>
+</g>
+</svg>
