@@ -13,7 +13,7 @@
         <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
         <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
         
-<script nonce="2c04ae65-3b24-4800-b2b5-2172c66e57a4">
+<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
   window.domain = 'hackmd.io'
   window.urlpath = ''
   window.debug = false
@@ -83,7 +83,7 @@
 
         
 <!-- Google Tag Manager -->
-<script nonce="2c04ae65-3b24-4800-b2b5-2172c66e57a4">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="stylesheet" href="https://hackmd.io/build/slide.css">
 
         <!-- Printing and PDF exports -->
-		<script nonce="2c04ae65-3b24-4800-b2b5-2172c66e57a4">
+		<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
@@ -181,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 &lt;font style=&#34;font-size:28px&#34;&gt;
 
-&lt;i&gt;&lt;font color=&#34;lightblue&#34;&gt;Hypervisors&lt;/font&gt;&lt;/i&gt;, and their &lt;i&gt;Virtual Machine Monitors (VMMs)&lt;/i&gt;,&lt;br/&gt;&lt;b&gt;c&lt;/b&gt;reate, &lt;b&gt;m&lt;/b&gt;anage, &lt;b&gt;m&lt;/b&gt;onitor, and &lt;b&gt;r&lt;/b&gt;un virtual [guest] machines on a host
+&lt;i&gt;&lt;font color=&#34;lightblue&#34;&gt;Hypervisors&lt;/font&gt;&lt;/i&gt;, and their &lt;i&gt;Virtual Machine Monitors (VMMs)&lt;/i&gt;,&lt;br/&gt;create, manage, monitor, and allocate virtualized hardware to Guest kernels
 &lt;/font&gt;
 
 &lt;table style=&#34;width:100%;margin-bottom:-35px&#34; border=&#34;0&#34;&gt;
@@ -303,49 +303,50 @@ The term &lt;font color=&#34;lightblue&#34;&gt;&lt;i&gt;hypervisor&lt;/i&gt;&lt;
 
 ---
 
+## Why does this matter to us? 
+&lt;b&gt;&lt;i&gt;&lt;font style=&#34;font-size:24pt&#34;&gt;( Perspective of a Malicious Actor )&lt;/font&gt;
+&lt;/i&gt;&lt;/b&gt;
+
+To summize $\dots$ &lt;font color=&#34;lightblue&#34;&gt;hypervisors&lt;/font&gt; provide:
+
+- Virtualization
+- Emulation
+- Portability
+- (Secure?) Isolation
+
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+---
+
 ## Why does this matter to us?
+&lt;b&gt;&lt;i&gt;&lt;font style=&#34;font-size:24pt&#34;&gt;( Perspective of a Malicious Actor )&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;
 
-&lt;br/&gt;
+To summize $\dots$ &lt;font color=&#34;lightblue&#34;&gt;hypervisors&lt;/font&gt; provide:
 
-Virtualization
+- Virtualization
+- Emulation
+- Portability
+- (Secure?) Isolation
 
-Emulation
-
-Portability
-
-(Secure?) Isolation
-&lt;br/&gt;
+&lt;b style=&#34;font-size:72px;color:red&#34;&gt;$\Rightarrow$ Cloud&lt;/b&gt;
 &lt;br/&gt;
 &lt;br/&gt;
 
 ---
 
 ## Why does this matter to us?
-
-&lt;br/&gt;
-
-Virtualization
-
-Emulation
-
-Portability
-
-(Secure?) Isolation
-&lt;br/&gt;
-&lt;b style=&#34;font-size:72px&#34;&gt;$\Rightarrow$ Cloud&lt;/b&gt;
-
----
-
-## Why does this matter to us?
+&lt;b&gt;&lt;i&gt;&lt;font style=&#34;font-size:24pt&#34;&gt;( Perspective of a Malicious Actor )&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;
 
 $$
 \def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}
 $$
 
-(Successful) Exploitation of a cloud 
-hypervisor provides $\sc{Ring}$ - $-1$ access to the underlying Host
+Exploitation of a &lt;font color=&#34;red&#34;&gt;cloud&lt;/font&gt; &lt;font color=&#34;lightblue&#34;&gt;hypervisor&lt;/font&gt; provides 
+$\sc{Ring}$ - $-1$ access to the underlying Host
 &lt;br/&gt;
-&lt;i&gt;&lt;b&gt;Root Mode&lt;/b&gt;$\dots$ on an [AWS/Azure/GCP] server ;)&lt;/i&gt;
+&lt;i style=&#34;font-size:28px&#34;&gt;&lt;b&gt;Root Mode&lt;/b&gt;$\dots$ on an [AWS/Azure/GCP] bare-metal host ;)&lt;br/&gt;. . . Think of the possibilities . . .&lt;/i&gt;
 &lt;br/&gt;&lt;br/&gt;
 &lt;br/&gt;&lt;br/&gt;
 
@@ -402,13 +403,13 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
   
   $$
   \large\textbf{Type-1} \\
-  \sc{NATIVE,\ BARE-METAL\ \ HYPERVISOR}\\
+  [\ \sc{NATIVE,\ BARE-METAL\ \ HYPERVISOR}\ ]\\
   $$
   &lt;/figcaption&gt;
   
   ---
   &lt;!--width=&#34;371pt&#34; height=&#34;169pt&#34;--&gt;
-  &lt;svg width=&#34;250pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 371.00 168.80&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
+  &lt;svg width=&#34;265pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 371.00 168.80&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 164.8)&#34;&gt;
   &lt;polygon fill=&#34;#a52a2a&#34; stroke=&#34;transparent&#34; points=&#34;11.5,-127.8 11.5,-153.8 94.5,-153.8 94.5,-127.8 11.5,-127.8&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-129.3 13,-152.3 93,-152.3 93,-129.3 13,-129.3&#34;&gt;&lt;/polygon&gt;
@@ -436,7 +437,7 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
  
 **$\rightarrow$** $[\dots]$ securely multiplexes the processor between Guests
 **$\rightarrow$** $[\dots]$ runs in privileged mode and enforces protection for memory and IO ports
-**$\rightarrow$** The VMM allocates$/$manages resources and implements the virtualization layer
+**$\rightarrow$** $[\dots]$ allocates$/$manages resources and implements the virtualization layer
 
 &lt;br/&gt;
 
@@ -453,7 +454,7 @@ _e.g.,_ ESXi, QEMU, KVM, Xen Server
   
   $$
   \large\textbf{Type-2} \\
-  \sc{HOSTED\ HYPERVISOR} \\
+  [\ \sc{HOSTED\ HYPERVISOR}\ ]\\
   $$
   
   &lt;/figcaption&gt;
@@ -490,11 +491,10 @@ _e.g.,_ ESXi, QEMU, KVM, Xen Server
   &lt;/figure&gt;
 
 
-**$\rightarrow$** Hypervisor is installed/operates via OS-level virtualization
-**$\rightarrow$** Acts and operates as any other user-space process
-**$\rightarrow$** OS kernel allows the existence of multiple isolated user-space instances
+**$\rightarrow$** $[\dots]$ are installed and operate via OS-level virtualization
+**$\rightarrow$** $[\dots]$ act and operate as any other userspace process
+**$\rightarrow$** $[\dots]$ leverage the OS kernel to enforce (userspace) isolation of Guest resources (CPU/MEM/etc.)
 
-&lt;br/&gt;
 &lt;br/&gt;
 
 ---
@@ -508,7 +508,7 @@ _e.g.,_ Virtualbox, VMWare Fusion, QEMU, KVM, Docker, LXC, chroot
  
   $$
   \large\textbf{Type-X} \\
-  \sc{HYBRID\ HYPERVISOR}\\
+  [\ \sc{HYBRID\ HYPERVISOR}\ ]\\
   $$
  
   &lt;/figcaption&gt; 
@@ -545,12 +545,12 @@ _e.g.,_ Virtualbox, VMWare Fusion, QEMU, KVM, Docker, LXC, chroot
   &lt;/figure&gt;
  
 
-**$\rightarrow$** Combines attributes of Type-1 and Type-2 
-**$\rightarrow$** A &#34;thin&#34; hypervisor managed by a service OS 
-**$\rightarrow$** Hypervisor managers CPU and MEM directly
-**$\rightarrow$** Guest OS accesses I/O devices via service OS (as para-virtualized devices)
+**$\rightarrow$** $[\dots]$ combines attributes of Type-1 and Type-2 
+**$\rightarrow$** $[\dots]$ runs as a &#34;thin&#34; hypervisor managed by a service OS 
+**$\rightarrow$** $[\dots]$ manager CPU and MEM directly
+**$\rightarrow$** $[\dots]$ provide Guests access to (para-virtualized) I/O devices through a service OS
 
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
 
 ---
 &lt;center&gt;
@@ -578,7 +578,20 @@ _e.g.,_ Microsoft Hyper-V
 ---
 
 &lt;figure&gt;&lt;center&gt;
-  &lt;!-- width=&#34;823pt&#34; height=&#34;295pt&#34;--&gt;
+&lt;figcaption style=&#34;font-size:16pt;margin:-10px&#34;&gt;
+
+$$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
+
+$$
+\sc{HYPER-V}\\
+\sc{ABSTRACTED\ ARCHITECTURE}
+$$
+
+&lt;/figcaption&gt;
+
+
+
+&lt;!-- width=&#34;823pt&#34; height=&#34;295pt&#34;--&gt;
   &lt;svg width=&#34;423pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 823.00 295.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 291)&#34;&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-192 13,-278 224,-278 224,-192 13,-192&#34;&gt;&lt;/polygon&gt;
@@ -606,14 +619,7 @@ _e.g.,_ Microsoft Hyper-V
   &lt;/g&gt;
   &lt;/g&gt;
   &lt;/svg&gt;
-&lt;figcaption style=&#34;margin:-50px&#34;&gt;
 
-$$
-Abstracted\ Architecure\ Model\\
-of\ Hyper-V
-$$
-
-&lt;/figcaption&gt;
 &lt;/center&gt;
 &lt;/figure&gt;
 &lt;br/&gt;
@@ -622,7 +628,7 @@ $$
 
 $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
-&lt;figure style=&#34;font-size:18px;margin-left:-45px;margin-top:-80px;margin-bottom:-20px&#34;&gt;
+&lt;figure style=&#34;font-size:18px;margin-left:-45px;margin-top:-120px;margin-bottom:-20px&#34;&gt;
 &lt;center&gt;
   &lt;figcaption&gt;
   
@@ -634,11 +640,11 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
   &lt;/figcaption&gt;
 
   &lt;!-- width=&#34;865pt&#34; height=&#34;705pt&#34; --&gt;
-  &lt;svg width=&#34;425pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 865.00 705.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
+  &lt;svg width=&#34;635pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 865.00 705.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 701)&#34;&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-246 13,-688 266,-688 266,-246 13,-246&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;#da70d6&#34; stroke=&#34;transparent&#34; stroke-width=&#34;3&#34; points=&#34;16.5,-249.5 16.5,-684.5 262.5,-684.5 262.5,-249.5 16.5,-249.5&#34;&gt;&lt;/polygon&gt;
-  &lt;text text-anchor=&#34;start&#34; x=&#34;100.0263&#34; y=&#34;-649.8&#34; font-family=&#34;Times,serif&#34; font-weight=&#34;bold&#34; text-decoration=&#34;underline&#34; font-size=&#34;14.00&#34; fill=&#34;#000000&#34;&gt;Root Partition&lt;/text&gt;
+  &lt;text text-anchor=&#34;start&#34; x=&#34;100.0263&#34; y=&#34;-649.8&#34; font-family=&#34;Times,serif&#34; font-weight=&#34;bold&#34; text-decoration=&#34;underline&#34; font-size=&#34;13.00&#34; fill=&#34;#000000&#34;&gt;Root Partition&lt;/text&gt;
   &lt;polygon fill=&#34;#edf2f9&#34; stroke=&#34;transparent&#34; stroke-width=&#34;3&#34; points=&#34;18.5,-589.5 18.5,-621.5 260.5,-621.5 260.5,-589.5 18.5,-589.5&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;2&#34; points=&#34;19.5,-590.5 19.5,-620.5 259.5,-620.5 259.5,-590.5 19.5,-590.5&#34;&gt;&lt;/polygon&gt;
   &lt;text text-anchor=&#34;start&#34; x=&#34;88.7654&#34; y=&#34;-601.3&#34; font-family=&#34;Times,serif&#34; font-size=&#34;14.00&#34; fill=&#34;#000000&#34;&gt;User Applications&lt;/text&gt;
@@ -799,7 +805,7 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
 $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
-&lt;figure style=&#34;font-size:18px;margin:-50px;margin-top:-80px;height:100%&#34;&gt;
+&lt;figure style=&#34;font-size:18px;margin:-50px;margin-top:-120px;height:100%&#34;&gt;
 &lt;center&gt;
   &lt;figcaption style=&#34;margin-bottom:-20px&#34;&gt;
   
@@ -810,7 +816,7 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
   &lt;/figcaption&gt;
 
   &lt;!-- width=&#34;1085pt&#34; height=&#34;861pt&#34; --&gt;
-  &lt;svg width=&#34;585pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 1085.00 861.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
+  &lt;svg width=&#34;625pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 1085.00 861.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 857)&#34;&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-44 13,-844 536,-844 536,-44 13,-44&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;#da70d6&#34; stroke=&#34;transparent&#34; stroke-width=&#34;3&#34; points=&#34;16.5,-47.5 16.5,-840.5 532.5,-840.5 532.5,-47.5 16.5,-47.5&#34;&gt;&lt;/polygon&gt;
@@ -1146,10 +1152,10 @@ $\textit{fin}$</div>
                                 <span class="ui-lastchangeuser" data-profile="bynx">&thinsp;<a class="ui-user-icon small" style="background-image: url(https://avatars.githubusercontent.com/u/3212079?s=96);" target="_blank"></a></span>
                             
                             &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                            <span class="ui-lastchange text-uppercase" data-createtime="Mon Oct 11 2021 23:40:24 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Oct 25 2021 14:50:31 GMT+0000 (Coordinated Universal Time)"></span>
+                            <span class="ui-lastchange text-uppercase" data-createtime="Mon Oct 11 2021 23:40:24 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 26 2021 01:22:57 GMT+0000 (Coordinated Universal Time)"></span>
                         </span>
                         <span class="pull-right">
-                            801 views
+                            882 views
                             <a href="#" class="ui-edit" title="Edit this note">
                                 <i class="fa fa-fw fa-pencil"></i>
                             </a>
@@ -1168,7 +1174,7 @@ $\textit{fin}$</div>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60728495-1"></script>
-<script nonce="2c04ae65-3b24-4800-b2b5-2172c66e57a4">
+<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -1176,7 +1182,7 @@ $\textit{fin}$</div>
     gtag('config', 'UA-60728495-1', {'user_id': userid});
 </script>
 <script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js" crossorigin="anonymous"></script>
-<script nonce="2c04ae65-3b24-4800-b2b5-2172c66e57a4">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
+<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
 
 
         
