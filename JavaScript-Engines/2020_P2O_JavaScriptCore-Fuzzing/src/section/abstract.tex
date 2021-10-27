@@ -1,0 +1,49 @@
+% Abstract
+\renewcommand{\abstractname}{}
+%\twocolumn[\begin{@twocolumnfalse} % COMMENT THIS OUT TO ENABLE SINGLE COLUMN MODE
+    \maketitle
+    \begin{abstract}
+        \vspace{-10ex}
+        \centering
+        \begin{minipage}{\dimexpr\paperwidth-5cm}
+          %------------------------------------------------------------------------
+          \ab{
+              \textsc{\bf{Abstract.\hspace{1ex}}}%
+            \textrm{\noindent Modern browser exploitation has shifted the focus of bug hunting to the browser's JavaScript engine. This component often 
+              trends towards high cyclomatic complexity and provides the greatest level of flexibility to a vulnerability researcher. This
+              has lead to a variety of bugs in varying subcomponents;  from compiler-, interpreter-, and optimization-based vulnerabilities
+              to those triggered from garbage collection, WebAssembly, or the DOM.%
+              %Are these vulnerabilities trivial to discover? Are there no more left to discover?%
+              %
+              We present here, an approach to vulnerability research in modern JavaScript engines. We will primarily focus on \textit{Safari}'s
+              internal JavaScript engine, JavaScriptCore. A strong focus on bug discovery, crash identification, and logical reasoning
+              provides success and failure over a variety of research approaches, both theoretical and pragmatic. We then outline our
+              interpretation on the ideal approach to future work in this relam.%
+              %
+              %However, the Renderer Process is naturally sandboxed by macOS; the above only makes up Stage 1. Research into general sandbox
+              %escapes go back over 20 years, with the first notable exploits performing escapes from the first Java sandbox. Modern
+              %research into the Apple Safari sandbox provide detailed and informative resources for us to draw and expand
+              %from.
+              %
+              %A likely path here is Apple's rather bug-full IPC mechanisms, of which there is one major one: Mach ports. They originally were
+              %used in the Mach kernel as a way to send messages back and forth from the kernel to various modules, but as XNU, Darwin, and
+              %computing as a whole became more complicated, Mach ports became a full back bone for the operating system.
+              %However, in their original incarnation, they had no concept of a malicious actor inside the system. Thus, ports run in privileged
+              %space, with a security model that has had to be bolted onto them post facto, leading to embarrassing mistakes and a number of
+              %vulnerabilities. Other possibilities include macOS's syscall interface, which provides 4 separate styles to perform syscalls
+              %in a way that Apple actively discourages developers from using and looking at.
+              %%
+              %This combination of a large code base (Webkit has ~5 million LOC), a continuously changing modular architecture, and thorough
+              %detailed analyses from renowned researchers provides us a fruitful target to develop and hone our research methodologies and skills
+              %in the Darwin environment.
+            } 
+          }
+          \keywords{Keywords: javascript, fuzzing, intermediate representation, speculative reasoning}%
+          %------------------------------------------------------------------------
+          % Journal Edition 
+          % \DOI{\urlstyle{same} \url{https:/doi.org/xxxxxxxx}    \hspace{8.5cm}    ISSN 1850-1168 (online)}
+          %------------------------------------------------------------------------
+        \end{minipage}
+        \vspace{7ex}
+    \end{abstract}
+%\end{@twocolumnfalse}]  % COMMENT THIS OUT TO ENABLE SINGLE COLUMN MODE

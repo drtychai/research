@@ -1,0 +1,115 @@
+%===============================================================
+%%%%%%%%%%%%%%%%%%%%%%%    main.tex   %%%%%%%%%%%%%%%%%%%%%%%%%%
+%===============================================================
+% All heavy lifting is done in the whitepaper class,
+%  stored locally as ./whitepaper.cls
+%
+% Configuration Options:
+%   1. 2-column mode can be *enabled/disabled*; see
+%      ./abstract.tex for comments indicating how
+%   2. All other configuration settings are defined in our 
+%      'whitepaper' document class
+%   3. All code listings must use [style=<LANG>] for color
+%      output, e.g., \begin{lstlisting}[style=Python]
+%===============================================================
+%===============================================================
+%%%%%%%%%%%%%%%%%        START PREAMBLE        %%%%%%%%%%%%%%%%%
+%===============================================================
+\documentclass{whitepaper}
+\ttl{A Fuzzy Safari}{Adventures in JavaScriptCore Vulnerability Research}
+%--------------------------------------------------------------
+% Author(s)
+\auth{J. Angra}
+%\auth{Z. Minneker}
+%--------------------------------------------------------------
+% Afficiation(s)
+\aff{Security Innovation}{}%Boston, Seattle, Pune}
+%-------------------------------------------------------------
+% Date Stamp
+\dtstamp{\today}
+%===============================================================
+%%%%%%%%%%%%%%%%%%        END PREAMBLE        %%%%%%%%%%%%%%%%%% 
+%===============================================================
+\begin{document}
+
+% Abstract
+\input{section/abstract}
+
+% Contact Info (displayed in footnote)
+\email{
+  %research@bynx.io \\ 
+  %PGP:\textsc{91e958db0cc8a0e0adbf4df9d79f1ecb60e882f2}
+}  
+
+% No page numbers on first page
+\thispagestyle{empty}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%\newpage
+
+% Display page numbers and current section in header for every page after first
+\pagestyle{headings}
+
+% Sections
+% 1. Background
+%   1.1. Browser Software
+%     1.1.1 Process Architecture
+%   1.2. JavaScript Engines (high-level breakdown of core components)
+%     1.2.1. Parser & Bytecode Compiler 
+%     1.2.2. Interpreter
+%     1.2.3. JIT Compiler
+%     1.2.4. Garbage Collector
+\input{section/1-background}
+\newpage
+% 2. Motivation 
+%   2.1. State of Fuzzing
+%   2.2 JSC Speculation
+%   2.3 WebAssembly
+\input{section/2-motivation}
+
+% 3. Methodology 
+%   3.1. Improving Implementation
+%     3.1.1. Speeding up Fuzzilli via Inter-Process Communication (IPC)
+%     3.1.2. Speeding up Fuzzilli via Inter-Process Fuzzing (IPF)
+%     3.1.3. Collective IPF
+%   3.2. Extended Code Generation: WASM
+%     3.2.1. Constructors
+%       WebAssembly.Global
+%       WebAssembly.Module
+%       WebAssembly.Memory
+%       WebAssembly.Instance
+%       WebAssembly.Table
+%     3.2.2. Static Methods
+%       WebAssembly.instantiate()
+%       WebAssembly.instantiateStreaming()
+%       WebAssembly.compile()
+%       WebAssembly.compileStreaming()
+%   3.3. Streamlining Triage
+%     Linux => ASAN macOS => ASAN 'latest' macOS
+\input{section/3-methodology}
+
+% 4. Results
+%   4.1. Speed-ups Were Meh
+%   4.2. WASM Fuzzing should be done independently
+%   4.3. Triage workflow was effective, but implemented too late (missed 0day)
+\input{section/4-results}
+
+% 5. Future Work
+%   5.1. Degrees of Freedom and Grammar-based Fuzzing
+%   5.2. Swift vs Rust
+\input{section/5-future-work}
+
+% 6. Acknowledgments
+\input{section/6-acknowledgments}
+
+% 7. Appendix A
+\input{section/appendix-a}
+
+% Bibliography in single column mode on dedicated page without section name in header
+\newpage\onecolumn
+\thispagestyle{myheadings}\markright{}
+%\nocite{*} % Force ref all bibs (comment out to only show references bibs via \cite{...})
+\bibliography{references}
+%\pagebreak % Force spacing of bibs such that entire page is filled
+
+\end{document}
