@@ -1,0 +1,177 @@
+\section{Appendix A: Canonical Representations}
+
+\subsection{Abstract Syntax Tree}
+A tree representation for the abstract syntactic structure of source code
+
+$\quad \rightarrow$  \textbf{Node}: construct, such as statement, loop
+
+$\quad \rightarrow$  \textbf{Edge}: containment relationship
+
+This makes it possible to apply all kinds of \textbf{syntax-directed} translation/transformation ASTs are simplified parse tree. It retains syntactic structure of code.
+
+\p{Definition 1 (Abstract Syntax Tree).} An Abstract Syntax Tree $(AST)$ for program sample $P$ is a tuple, where for:
+%
+\begin{align}
+    \Large{P_{_A}{_S}{_T}} = ( \eta ,\tau ,\chi , s, \delta, \phi )
+\end{align}
+
+\begin{itemize}
+  \item $\eta$ is a \textbf{set of nonterminal nodes}
+  \item $\tau$ is a \textbf{set of terminal nodes}
+  \item $\chi$ is a \textbf{set of values}
+  \item $s \in \eta$ is the \textbf{root node}
+  \item $\delta : \eta \rightarrow (\eta \bigcup \tau  )\star$ is a function that maps a nonterminal node to  a list of its children
+  \item $\phi : \tau \rightarrow \chi$ is a function that maps a terminal node to an associated value.  
+\end{itemize}
+
+Every node except the root appears exactly once in all the lists of children. Next, we define $AST$ paths. For convenience, in the rest of this section we assume that all definitions refer to a single $P_{{_A}{_S}{_T}}$ .  
+
+An $AST$ path is a path between nodes in the AST, starting from one terminal, ending in another terminal, and passing through an intermediate nonterminal in the path which is a common ancestor of both terminals. More formally:
+
+\p{Definition 2 (AST path).} An $AST$-path of length $\kappa$ is a sequence of the form $n_{1}d_{1} \dots n_{\kappa}d_{\kappa} n_{\kappa+1}$ where:
+\begin{itemize}
+  \item $n_{1},n_{\kappa+1} \in \tau$ are terminals
+  \item $\forall i \in [2..\kappa]: n_{i} \in \eta$ are nonterminals
+  \item $\forall i \in [1..\kappa]: d_{i} \in {\{\uparrow,\downarrow\}}$ are movement directions (either up or down in the tree), e.g.,
+\end{itemize}
+%
+\begin{align}
+(d_{i}\ &=\ \uparrow)  \ \Rightarrow\ n_{i} \in \delta (n_{i+1} ) \\
+(d_{i}\ &=\ \downarrow)\ \Rightarrow\ n_{i+1} \in \delta (n_{i})
+\end{align}
+
+For an $AST$-path $\rho \in P$, we use $start(\rho)$ to denote $n_{1}$ $-$ the starting terminal of $\rho$, and $end(\rho)$ to denote $n_{\kappa+1}$ $-$ its final terminal.
+
+Using this definition we define a   path-context   as a tuple of an AST path and the values associated with its terminals:
+
+\textbf{Definition 3 (AST path-context).} Given an $AST$ path $\rho$, its path-context is a triplet $( \chi_{s}, \rho, \chi_{\tau} )$ where $\chi_{s} = \phi$ (i.e., $start(\rho)$) and $\chi_{\tau} = \phi$ (i.e., $end(\rho)$)   are the values associated with the start and end terminals of $\rho$, respectively. 
+
+That is, a path-context describes two actual tokens with the syntactic path between them.
+
+\p{Example 1.} A possible path-context that represents the statement: $x = 7;$" would be:
+%
+\begin{align}
+(\ x,\ (NameExpr\ \uparrow\ AssignExpr\ \downarrow\ IntegerLiteralExpr),\ 7\ )
+\end{align}
+
+\subsection{Directed Acyclic Graph} 
+$DAG$s are similar to an $AST$ but with a unique node for each value.
+
+\subsection{Control Flow Graph}
+A representation, using graph notation, of all paths that might be traversed through a program during its execution. A directed graph (usually for a single procedure) in which: 
+- Each node is a single basic block
+- There is an edge $b1→b2$, where control may flow from the last statement of $b1$ to the first statement of $b2$ in some execution.
+
+Note: $CFG$s are actualy conservative approximations of the control flow
+
+\subsection{Code Property Graph}
+
+A code property graph is a property graph, $G = (V,E,λ,μ)$, constructed from the $AST$, $CFG$, and $PDG$ of source code with:
+\begin{align}
+{V} &= V_{A} \\
+{E} &= E_{A}\ {\bigcup}\ \ E_{C}\ \bigcup E_{P}\ \ \\ 
+{λ} &= λ_{A}\ \ {\bigcup}\ \ λ_{C}\ \bigcup λ_{P}\ \ \\
+{μ} &= μ_{A}\ \ {\bigcup}\ \ μ\ P 
+\end{align}
+
+where we combine the labeling and property functions with a slight abuse of notation.
+
+\subsection{Program Dependence Graph}
+ A directed graph representing dependencies among:
+ - Code \textbf{Control} dependence
+ - $A$'s control depends on $B$, if $B$’s execution decides whether or not $A$ is executed
+ - Code \textbf{Data} dependence (Data Dependency Graph $-$ $DDG$)
+ - $A$'s data depends on $B$ if $A$ uses variable defined in $B$
+
+A $PDG$ contains both \textbf{control dependence edges} and \textbf{data dependence edges}.
+
+\subsection{Points-to Graph}
+ 
+For a program location, for any object `reference/pointer`, calculate all the possible `objects/variables` it may/must refer/point to:
+  - Connect together analyzed program semantics for individual methods
+  - Essential to expand intra-procedural analysis to inter-procedural
+  - Detect consistent usage of resources
+  - File `open`/`close`, `lock`/`unlock`, `malloc`/`free` 
+
+\subsection{Property Graph}
+A property graph $G=(V,E,λ,μ)$, is a directed, edge-labeled, attributed multigraph where $V$ is a \textbf{set of nodes**, $E$ is a **set of directed edges}, and $λ : E → Σ$ is an edge labeling function assigning a label from the alphabet $Σ$ to each edge.
+
+Properties can be assigned to edges and nodes by the function:
+
+$
+\large{μ:(V\ \bigcup E)×K→S}
+$
+
+where $K$ is the set of \textit{property keys} and $S$ the set of \textit{property values}/
+
+\subsection{Call Graph}
+A directed graph representing caller-callee relationship between methods/functions
+ $\quad \rightarrow$ \textbf{Node}: methods/functions
+ $\quad \rightarrow$ \textbf{Edges}: calls
+
+\subsection{Static Single Assignment Form}
+A program is in $SSA$ form $iff$:
+1. \textbf{each variable** is assigned a value in **exactly one} statement
+1. \textbf{each variable** use is **dominated by the definition}
+
+The $SSA$ Graph is a directed graph in which:
+ $\quad \rightarrow$ \textbf{Node}: All definitions and uses of $SSA$ variables  
+ $\quad \rightarrow$ \textbf{Edges}: $\{(d,\ u)\ :\ u \}$ use the $SSA$ variable defined in $d$
+
+
+\subsection{Three-Address Code}
+A term used to describe many different representations of the form:
+%
+\begin{align}
+\Large{\psi\ =\ \theta_{fn}\ \ op1\ \ op2\ \ op3}
+\end{align}
+
+where $\psi \in \Psi$, $\theta \in \Theta$ are our statement and operation value, respectively $-$ $op\star$ are 
+optional parameters passed to $\theta_{fn}$.
+
+
+\subsection{Domain-Specific Languages}
+We define $A+B$ as the disjoint union of two sets, $A$ and $B$:
+%
+\begin{align} 
+\large {A+B} &\equiv \large A \ \ {\bigcup}^{\ \ast} \ B \\
+&\equiv \large  \ (\ A×{\{0\}}\ ) \ \bigcup \ (\ B×{\{1\}}\ ) \\
+&\equiv \large  \ A^{*} \ \bigcup \ B^{\ *}
+\end{align}
+
+Note: Sequences in the free monoid are denoted as a vector: $\large{\vec{v} \in A^{\ast}}$
+
+\subsection{Context-free Grammar}
+A context-free grammar is a tuple $(\Sigma, X, R, s)$ where $\Sigma$ and $X$ are finite sets called \textbf{terminals} 
+and the \textbf{non-terminals}, respectively.
+
+\begin{itemize}
+    \item $R \subseteq X \times (X + \Sigma)^\star$ is a finite set of \textit{production rules} 
+    \item $s \in X$ is called the \textit{start symbol}
+\end{itemize}
+
+The \textbf{language} of a context-free grammar is given by:
+%
+\begin{align}
+\large{L(G) = \{\ \vec{u} \in V^\star\ \vert\ s \to_R \vec{u}\ \}}
+\end{align}
+
+where the rewriting relation, $(\to_R) \subseteq (V + X)^\star \times (V + X)^\star$, is traditionally defined as the transitive closure of the following directed graph:
+%
+\begin{align}
+\large\{\ \ 
+(\vec{u}{\ x\ }\vec{w},\ \ \vec{u\ v\ w})\quad 
+\Big{\vert} \quad 
+\vec{u}, \vec{w} \in (V+X)^{\ast},\ \ (x, \vec{v}) \in R\ \
+\large\}
+\end{align}
+
+Note: Given a set $S$, the free monoid on $S$ is the set $S^{\ast}$ of all finite sequences of elements $s \in S$, made 
+into a monoid using concatenation.
+
+
+\subsection{Intermediate Representations}
+
+\subsection{Assembly Instructions}
+
+\subsection{Machine Code}

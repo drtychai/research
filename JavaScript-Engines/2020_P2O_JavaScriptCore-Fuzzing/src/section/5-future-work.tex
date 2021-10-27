@@ -1,0 +1,191 @@
+%===============================================================
+\section{Future Work}
+% iterate off of Fuzzilli's initial work
+% fuzzing using AOT compilation of the engine's IR (feed directly/bypass parser)
+
+\subsection{Lessons Learned}
+Thus far, we have demonstrated that effective fuzzing leverages a multitude of techniques 
+to discover bugs, many of which require a great deal of education and practice. A recent emerging one utilizes
+\textit{semantic-aware fuzzing} to drive both the generative and mutation engines.
+%
+Skyfire\cite{skyfire_2017} was one of the earliest research efforts to tackle the semantic problem in language 
+fuzzing; it learns the semantics of a language from existing test cases, in the form of probabilistic 
+context-sensitive grammar (PCSG). This grammar is then used for further fuzzing. Conversely, with a focus on 
+stressing specific components in a JavaScript Engine, DIE\cite{die_2020} analyzes and utilizes the overall 
+semantic properties of each existing test case (i.e., aspects).
+%
+% Due to the high severity of vulnerabilities in JavaScript runtime environments, a number of research work have attempted
+% to fuzz JavaScript engines for finding vulnerabilities [24, 27, 29, 34, 37, 40, 41, 55, 56]. For fuzzing JavaScript
+% engines, most research work have focused on generating syntactically valid JavaScript test cases [24, 29, 37, 41, 55].
+% Despite their successful fuzzing efforts, they did not consider JavaScript semantics, and thus, could not generate test cases
+% effectively—many test cases merely end up as JavaScript runtime errors [27, 56]. Skyfire [56] was proposed to generate
+% test cases through the probabilistic context-sensitive grammar that defines syntax features and semantic rules by learning
+% from existing samples. CodeAlchemist [27] was proposed to generate semantically-aware JavaScript code by using small
+% code blocks collected from a large corpus. Unfortunately, there is no JavaScript engine fuzzer that can generate semantically
+% correct test cases all the time.
+% 
+% Recently proposed JavaScript engine fuzzers tried to reduce the input space. DIE [40] has proposed two mutation strategies,
+% structure-preserving mutation and type-preserving mutation. They, also, reduce the input space by utilizing known proof
+% of concept (PoC) exploits or existing test cases. Montage [34] showed its outperformed efficacy by leveraging a neural net-
+% work language model (NNLM) to generate test cases based on code fragments of previously reported vulnerabilities, similar
+% to DIE. Their (DIE and Montage) design choice allowed them to overcome the fundamental limitation of other JavaScript
+% engine fuzzers: simply producing generic test cases is not really effective to find vulnerabilities in JavaScript engines
+% because of the huge search space.
+%
+In this section, we propose a future (alternative) direction for continued reserach of JavaScript engines. Unsurprisingly, we, too,
+start by tackingly the semantic problem of language -- specifically, ECMAScript.
+
+
+%---------------------------------------------------------------
+%%%
+%% something something << aggregate type >> 
+%%%
+\subsection{A New Approach to the Semantic Problem}
+ECMA-262\cite{ecma-2021}, the official language specification for which JavaScript is derived, is over 800 pages. Compared to the
+current ISO International C++20 standard\cite{cpp20} (~1,800 pages), less than a thousand pages should be \textit{more}
+than approachable -- right? (hell no) So why does JavaScript feel so much larger of a language... 
+
+\begin{center}
+\begin{minipage}{0.75\dimexpr\paperwidth}
+\p{\hspace{-1.5em}\textit{An Aside...\\}}
+\hspace{-1em}JavaScript is a prototype-based, weakly-typed, dynamic language. For 
+those defined, a \textit{type object} is a JavaScript object representing a type. Type objects define 
+the layout, stride, and size of a continuous region of memory. There are three basic 
+categories: \textit{primitive}, \textit{struct}, and \textit{array} type objects. \\
+\end{minipage}
+
+\begin{minipage}{0.7\dimexpr\paperwidth}
+\p{\textit{Primitive type objects}}\hspace{-1em} are type objects without any internal structure. All 
+primitive type objects are predefined in the system. 
+
+\begin{lstfloat}
+\begin{lstlisting}[style=JS,caption=Primitive type objects]
+var any;                     //  any (uninitialized)
+
+var u8  = 254;               //  8-bit unsigned integers 
+var u16 = 65534;             // 16-bit unsigned integers 
+var u32 = 4294967294;        // 32-bit unsigned integers 
+var u64 = (2**64 - 1);       // 64-bit unsigned integers 
+
+
+var i8  = -127;              //  8-bit signed integer 
+var i16 = -32767;            // 16-bit signed integer
+var i32 = -2147483647;       // 32-bit signed integer 
+var i64 = -2**63;            // 64-bit signed integer 
+
+var f32 = 1.123456;          // 32-bit floating point
+var f64 = 1.123456789012345; // 64-bit floating point
+
+var str = "";                // String primitive
+var obj = Object             // Object primitive
+
+\end{lstlisting}
+\end{lstfloat}
+%% The majority of the primitive types are simple scalar types, but
+%% they also include three reference types (any, object, and string).
+%% The reference types are considered opaque, which means that users
+%% cannot gain access to a raw array buffer containing instances of
+%% these types.
+%%%% page break in minipage %%%%%
+\end{minipage}
+
+%%%% page break in minipage %%%%%
+\begin{minipage}{0.7\dimexpr\paperwidth}
+\p{\textit{Struct type objects}}\hspace{-1em} can be composed as structures using the StructType constructor:
+
+\begin{lstfloat}
+\begin{lstlisting}[style=JS,caption=Struct type objects]
+var Point = new StructType({ x:int8, y:int8 });
+var Line  = new StructType({ from:Point, to:Point };
+\end{lstlisting}
+\vspace{-2em}
+\end{lstfloat}
+\textit{Listing 6} constructs two new type objects called \textit{Point} and \textit{Line}, a structure with 
+two $8$-bit integer fields, $x$ and $y$, and a structure containing two aforementioned \textit{Point} structures.
+The size of each \textit{Point} will be two $(2)$ bytes, while each \textit{Line} will be four $(4)$ bytes in total;
+memory is laid out continuously. Hence, structures can embed other structures, e.g., \textit{prototypes}.
+%% In general, the StructType constructor takes a single object
+%% as argument. For each property f in this object, there will be a
+%% corresponding field f in the resulting struct type. The type of this
+%% corresponding field is taken from the value of the property f, which
+%% must be a type object.
+\end{minipage}
+%%%% page break in minipage %%%%%
+
+\begin{minipage}{0.7\dimexpr\paperwidth}
+\p{\textit{Array type objects}}\hspace{-1em} are constructed by invoking the arrayType method 
+on the type object representing the array elements:
+
+\begin{lstfloat}
+\begin{lstlisting}[style=JS,caption=Array type objects]
+var Points = Point.arrayType(2);
+var Line2  = new StructType({ points:Points });
+var Plane  = Line.arrayType(768).arrayType(1024);
+\end{lstlisting}
+\vspace{-2em}
+\end{lstfloat}
+In \textit{Listing 7}, the type \textit{Points} is defined as a two-element array of \textit{Point} structures. Array types are 
+themselves normal type objects, and hence they can be embedded in structures. 
+The array type \textit{Points} is then used to create the structure type \textit{Line2}. \textit{Line2}
+is equivalent, in layout, to that of the \textit{Line} type; however, it is defined using a two-element array
+in lieu of two distinct fields. The \textit{Plane} type creates a multideminsional array by invoking
+the constructor multiple times, resulting in a $1024x768$ matrix of \textit{Points}. \\
+\end{minipage}
+\end{center}
+% It's because of \textit{Objects}; JavaScript is a prototype-inheriting language with six (6) atomics and one (1) structural type -- the \textit{Object}. Arrays, Functions, Classes, Modules, Loops, State-machines, Closures... all are simply derivatives of the parent \textit{JSObject} structural prototype. 
+
+Reiterating our state-of-affairs: We have the entire [dynamic, weakly-typed, prototyped-based] language as our disposal; 
+syntactic correctness difficult to determine, semantic equivalence\footnotemark
+\footnotetext{Optimizations of this problem are exactly what JIT compilers were designed for.}
+even more so. The standard slew of problems are faced; insufficient CFG/DFG mutation controls, insufficient 
+targeting leading to resource waste, [...]. The \textsc{ECMA-262} language space is simply far too large. 
+
+To improve semantic control, an AST can be used; to improve speed, bytecode can be used; A custom intermediate
+representation could even be written. The aforementioned techniques aim to reduce the degrees-of-freedom of the, semantically sound and
+syntacticaly correct, input space. Narrowing the constraints on the input space helps to reduce complexity and improve target accuracy; 
+we posit that we can recieve the same benifit while maintaining degrees-of-freedom.
+
+%---------------------------------------------------------------
+\subsection{JavaScript Semantics: A Breakdown}
+
+\subsubsection{What is \textit{Resolution}?}
+
+\textbf{\textit{Resolution}} is defined here ala \textit{Display Resolution}. In other words, as degrees-of-freedom vary, so too 
+does our observable. In QFT, we know this term as \textit{dimensionality} or \textit{cardinality}; we use the former
+and latter interchangeably.
+
+Classical representations of programming languages aim to reduce dimensionality in an effort to ease lexical, syntactical, and 
+semantical analysis. This result is a \textit{discrete resolution} of a provided input sample program, $P$. Examples of the 
+aforementioned discrete resolutions can be see in \textit{Appendix A: Cononical Representations}.
+
+\subsubsection{A Modest Proposition}
+Given a vector representation of a sample program, $P_{\lvert\psi\rangle}$, renormaliztion group transformations of 
+$\lvert P \rangle$ will validate universality for cononical representations, $P_{\gamma}$, $P_{\rho}$, $P_{\tau}$. As a 
+result, dimensionality can be preserved while maintaining a discrete resolution, i.e., logically equivalent semantical 
+mutations exist for all semantic mutations at all resolutions of $P$.
+
+\p{Challanges}
+Assigning a semantic label to a code snippet (such as a name to a method) is an example for a class of problems that require 
+a compact semantic descriptor of a snippet. The question is how to represent code snippets in a way that captures some semantic 
+information, is reusable across programs, and can be used to predict properties such as a label for the snippet. This leads 
+to three challenges:
+%
+\begin{enumerate}
+  \item Representing a snippet in a way that enables RG transformations
+  \item Learning which parts in the representation are relevant to prediction of the desired property
+  \item Learning the order of importance (precedence) of the part
+\end{enumerate}
+
+%---------------------------------------------------------------
+\subsection{Degrees of Freedom and Grammar-based Fuzzing}
+%% Universiality %% 
+%% we must identify non-negligible perturbative and universal semantic forms withoutimpeding on the language's degrees of freedom.
+
+
+
+%---------------------------------------------------------------
+\subsection{Chalk Trait SMT}
+
+%---------------------------------------------------------------
+%\subsection{Swift v. Rust}
+%===============================================================

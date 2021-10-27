@@ -1,0 +1,34 @@
+%===============================================================
+\section{Results}
+%\subsection{Limitations and Pivots}
+% WHAT WENT WRONG; HOW'D WE REACT; WHAT CAN BE DONE %
+%---------------------------------------------------------------
+\subsection{Processing Speed}
+\begin{itemize}
+    \item An AOT transpiler (JavaScript $\leftrightarrow$ B3IR) would allow for direct targeting
+    \item Bypassing parseing and lexing would allow for fuzzing via C++ types
+    \item swift compiler is awesome, openMPI is awful
+    \item improving runloop effeciencies in Swift GCD, or rather -- using concurrency-friendly language 
+    \item distrubuted dataflow over N procs $>$ collective IPF over N procs 
+\end{itemize}
+
+%---------------------------------------------------------------
+\subsection{WASM}
+\begin{itemize}
+    \item $\rightarrow$ should be done independently
+    \item takes on an approach of it's own between WASM, WAT, and JS
+    \item we did not have the time to focus on this part for the depth required (for success)
+\end{itemize}
+
+
+%---------------------------------------------------------------
+\subsection{Triage Wokflow Improvements}
+\begin{itemize}
+    \item Improved workflow did great!
+    \item we implemented it, too late
+    \item CVE--2020--9800 (overview of crash and why we didn't find it first)
+\end{itemize}
+
+
+
+%===============================================================

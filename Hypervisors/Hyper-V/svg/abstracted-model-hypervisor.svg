@@ -1,0 +1,95 @@
+<svg width="744pt" height="303pt" viewBox="0.00 0.00 744.00 302.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 298.8)">
+<title>hypervisor_model</title>
+<text text-anchor="start" x="284.4179" y="-6.4" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Abstracted Hypervisor Model</text>
+<g id="clust3" class="cluster">
+<title>cluster_vmm</title>
+<polygon fill="#add8e6" stroke="#000000" points="64,-80 64,-230.8 728,-230.8 728,-80 64,-80"></polygon>
+<text text-anchor="middle" x="396" y="-88.2" font-family="Times,serif" font-size="14.00" fill="#000000">Hypervisor / VMM</text>
+</g>
+<!-- guest_node -->
+<g id="node1" class="node">
+<title>guest_node</title>
+<polygon fill="#a52a2a" stroke="#000000" stroke-width="3" points="504,-294.8 292,-294.8 288,-290.8 288,-258.8 500,-258.8 504,-262.8 504,-294.8"></polygon>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="500,-290.8 288,-290.8 "></polyline>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="500,-290.8 500,-258.8 "></polyline>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="500,-290.8 504,-294.8 "></polyline>
+<text text-anchor="middle" x="396" y="-272.6" font-family="Times,serif" font-size="14.00" fill="#000000">Guest OS</text>
+</g>
+<!-- d_node -->
+<g id="node2" class="node">
+<title>d_node</title>
+<path fill="#ffc0cb" stroke="#000000" d="M264,-186.3C264,-186.3 528,-186.3 528,-186.3 534,-186.3 540,-192.3 540,-198.3 540,-198.3 540,-210.3 540,-210.3 540,-216.3 534,-222.3 528,-222.3 528,-222.3 264,-222.3 264,-222.3 258,-222.3 252,-216.3 252,-210.3 252,-210.3 252,-198.3 252,-198.3 252,-192.3 258,-186.3 264,-186.3"></path>
+<text text-anchor="middle" x="395.8184" y="-200.1" font-family="Times,serif" font-size="14.00" fill="#000000">Dispatcher</text>
+</g>
+<!-- guest_node->d_node -->
+<g id="edge1" class="edge">
+<title>guest_node->d_node</title>
+<path fill="none" stroke="#000000" d="M467.4287,-258.5052C477.4767,-249.8534 479.6134,-239.3759 473.8387,-229.9477"></path>
+<polygon fill="#000000" stroke="#000000" points="476.3668,-227.5227 467.1273,-222.3378 471.1168,-232.1528 476.3668,-227.5227"></polygon>
+</g>
+<!-- d_node->guest_node -->
+<g id="edge6" class="edge">
+<title>d_node->guest_node</title>
+<path fill="none" stroke="#000000" d="M324.8727,-222.3378C314.6677,-230.9531 312.3741,-241.4226 317.9917,-250.8714"></path>
+<polygon fill="#000000" stroke="#000000" points="315.3914,-253.2155 324.5713,-258.5052 320.6938,-248.6454 315.3914,-253.2155"></polygon>
+</g>
+<!-- a_node -->
+<g id="node3" class="node">
+<title>a_node</title>
+<path fill="#ffc0cb" stroke="#000000" d="M84,-113.3C84,-113.3 276,-113.3 276,-113.3 282,-113.3 288,-119.3 288,-125.3 288,-125.3 288,-137.3 288,-137.3 288,-143.3 282,-149.3 276,-149.3 276,-149.3 84,-149.3 84,-149.3 78,-149.3 72,-143.3 72,-137.3 72,-137.3 72,-125.3 72,-125.3 72,-119.3 78,-113.3 84,-113.3"></path>
+<text text-anchor="middle" x="179.9341" y="-127.1" font-family="Times,serif" font-size="14.00" fill="#000000">Allocator</text>
+</g>
+<!-- d_node->a_node -->
+<g id="edge2" class="edge">
+<title>d_node->a_node</title>
+<path fill="none" stroke="#000000" d="M271.618,-186.2551C231.2404,-176.5157 193.8348,-164.3975 171.5933,-154.0207"></path>
+<polygon fill="#000000" stroke="#000000" points="172.9855,-150.8022 162.4851,-149.3904 169.8132,-157.0421 172.9855,-150.8022"></polygon>
+</g>
+<!-- i_node -->
+<g id="node4" class="node">
+<title>i_node</title>
+<path fill="#ffc0cb" stroke="#000000" d="M516,-113.3C516,-113.3 708,-113.3 708,-113.3 714,-113.3 720,-119.3 720,-125.3 720,-125.3 720,-137.3 720,-137.3 720,-143.3 714,-149.3 708,-149.3 708,-149.3 516,-149.3 516,-149.3 510,-149.3 504,-143.3 504,-137.3 504,-137.3 504,-125.3 504,-125.3 504,-119.3 510,-113.3 516,-113.3"></path>
+<text text-anchor="middle" x="611.9499" y="-127.1" font-family="Times,serif" font-size="14.00" fill="#000000">Interpreter Routine</text>
+</g>
+<!-- d_node->i_node -->
+<g id="edge3" class="edge">
+<title>d_node->i_node</title>
+<path fill="none" stroke="#000000" d="M378.4046,-186.2551C399.2358,-174.499 444.9098,-159.2768 493.9838,-147.8351"></path>
+<polygon fill="#000000" stroke="#000000" points="494.86,-151.2254 503.8376,-145.5993 493.311,-144.3989 494.86,-151.2254"></polygon>
+</g>
+<!-- a_node->d_node -->
+<g id="edge4" class="edge">
+<title>a_node->d_node</title>
+<path fill="none" stroke="#000000" d="M288.1624,-145.5993C334.711,-155.8686 379.5121,-169.9186 404.6611,-181.6982"></path>
+<polygon fill="#000000" stroke="#000000" points="403.097,-184.8294 413.5954,-186.2551 406.2775,-178.5936 403.097,-184.8294"></polygon>
+</g>
+<!-- physical_node -->
+<g id="node5" class="node">
+<title>physical_node</title>
+<polygon fill="#c0c0c0" stroke="#000000" stroke-width="3" points="360,-72 4,-72 0,-68 0,-36 356,-36 360,-40 360,-72"></polygon>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="356,-68 0,-68 "></polyline>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="356,-68 356,-36 "></polyline>
+<polyline fill="none" stroke="#000000" stroke-width="3" points="356,-68 360,-72 "></polyline>
+<text text-anchor="middle" x="180" y="-49.8" font-family="Times,serif" font-size="14.00" fill="#000000">Physical (Bare-Metal) Hardware</text>
+</g>
+<!-- a_node->physical_node -->
+<g id="edge8" class="edge">
+<title>a_node->physical_node</title>
+<path fill="none" stroke="#000000" d="M109.921,-112.981C98.1618,-103.0654 95.8989,-90.6541 103.1323,-79.7781"></path>
+<polygon fill="#000000" stroke="#000000" points="105.9092,-81.9279 110.0776,-72.1875 100.7448,-77.2025 105.9092,-81.9279"></polygon>
+</g>
+<!-- i_node->d_node -->
+<g id="edge5" class="edge">
+<title>i_node->d_node</title>
+<path fill="none" stroke="#000000" d="M629.5149,-149.3904C610.9566,-159.8395 572.8236,-173.0155 530.1385,-183.8413"></path>
+<polygon fill="#000000" stroke="#000000" points="529.2487,-180.4558 520.382,-186.2551 530.9299,-187.251 529.2487,-180.4558"></polygon>
+</g>
+<!-- physical_node->a_node -->
+<g id="edge7" class="edge">
+<title>physical_node->a_node</title>
+<path fill="none" stroke="#000000" d="M249.9224,-72.1875C261.7656,-82.0809 264.1125,-94.4879 256.9632,-105.3775"></path>
+<polygon fill="#000000" stroke="#000000" points="254.1962,-103.2188 250.079,-112.981 259.3853,-107.917 254.1962,-103.2188"></polygon>
+</g>
+</g>
+</svg>

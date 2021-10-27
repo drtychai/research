@@ -1,0 +1,31 @@
+<svg width="371pt" height="187pt" viewBox="0.00 0.00 371.00 186.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 182.8)">
+<title>D</title>
+<text text-anchor="start" x="121.0445" y="-9.2" font-family="Times,serif" font-weight="bold" text-decoration="underline" font-size="14.00" fill="#000000">Hosted Virtualization</text>
+<!-- some_node -->
+<g id="node1" class="node">
+<title>some_node</title>
+<polygon fill="#a52a2a" stroke="transparent" points="11.5,-145.8 11.5,-171.8 94.5,-171.8 94.5,-145.8 11.5,-145.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-147.3 13,-170.3 93,-170.3 93,-147.3 13,-147.3"></polygon>
+<text text-anchor="start" x="20.7272" y="-154.2" font-family="Times,serif" font-size="14.00" fill="#000000">Guest OS 1</text>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="97.5,-145.8 97.5,-171.8 180.5,-171.8 180.5,-145.8 97.5,-145.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="99,-147.3 99,-170.3 179,-170.3 179,-147.3 99,-147.3"></polygon>
+<text text-anchor="start" x="106.7272" y="-154.2" font-family="Times,serif" font-size="14.00" fill="#000000">Guest OS 2</text>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="183.5,-145.8 183.5,-171.8 266.5,-171.8 266.5,-145.8 183.5,-145.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="185,-147.3 185,-170.3 265,-170.3 265,-147.3 185,-147.3"></polygon>
+<text text-anchor="start" x="192.7272" y="-154.2" font-family="Times,serif" font-size="14.00" fill="#000000">Guest OS 3</text>
+<polygon fill="#a52a2a" stroke="transparent" stroke-width="3" points="269.5,-145.8 269.5,-171.8 352.5,-171.8 352.5,-145.8 269.5,-145.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="271,-147.3 271,-170.3 351,-170.3 351,-147.3 271,-147.3"></polygon>
+<text text-anchor="start" x="278.7272" y="-154.2" font-family="Times,serif" font-size="14.00" fill="#000000">Guest OS 4</text>
+<polygon fill="#add8e6" stroke="transparent" stroke-width="3" points="11.5,-102.8 11.5,-142.8 352.5,-142.8 352.5,-102.8 11.5,-102.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-104.3 13,-141.3 351,-141.3 351,-104.3 13,-104.3"></polygon>
+<text text-anchor="start" x="127.568" y="-118.6" font-family="Times,serif" font-size="14.00" fill="#000000">Hypervisor / VMM</text>
+<polygon fill="#da70d6" stroke="transparent" stroke-width="3" points="11.5,-64.8 11.5,-99.8 352.5,-99.8 352.5,-64.8 11.5,-64.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-66.3 13,-98.3 351,-98.3 351,-66.3 13,-66.3"></polygon>
+<text text-anchor="start" x="158.0845" y="-78.1" font-family="Times,serif" font-size="14.00" fill="#000000">Host OS</text>
+<polygon fill="#c0c0c0" stroke="transparent" stroke-width="3" points="11.5,-31.8 11.5,-61.8 352.5,-61.8 352.5,-31.8 11.5,-31.8"></polygon>
+<polygon fill="none" stroke="#000000" stroke-width="3" points="13,-33.3 13,-60.3 351,-60.3 351,-33.3 13,-33.3"></polygon>
+<text text-anchor="start" x="105.0287" y="-42.6" font-family="Times,serif" font-size="14.00" fill="#000000">Physical (Bare-Metal) Host</text>
+</g>
+</g>
+</svg>
