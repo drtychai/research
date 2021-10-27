@@ -13,7 +13,7 @@
         <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
         <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
         
-<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
+<script nonce="d4e37d60-9d37-40c0-8bf5-ebf38b45a6a9">
   window.domain = 'hackmd.io'
   window.urlpath = ''
   window.debug = false
@@ -83,7 +83,7 @@
 
         
 <!-- Google Tag Manager -->
-<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="d4e37d60-9d37-40c0-8bf5-ebf38b45a6a9">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="stylesheet" href="https://hackmd.io/build/slide.css">
 
         <!-- Printing and PDF exports -->
-		<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
+		<script nonce="d4e37d60-9d37-40c0-8bf5-ebf38b45a6a9">
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
@@ -181,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 &lt;font style=&#34;font-size:28px&#34;&gt;
 
-&lt;i&gt;&lt;font color=&#34;lightblue&#34;&gt;Hypervisors&lt;/font&gt;&lt;/i&gt;, and their &lt;i&gt;Virtual Machine Monitors (VMMs)&lt;/i&gt;,&lt;br/&gt;create, manage, monitor, and allocate virtualized hardware to Guest kernels
+&lt;i&gt;&lt;font color=&#34;lightblue&#34;&gt;Hypervisors&lt;/font&gt;&lt;/i&gt;, and their &lt;i&gt;Virtual Machine Monitors (VMMs)&lt;/i&gt;,&lt;br/&gt;create, manage, monitor, and allocate virtualized hardware to &lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; kernels
 &lt;/font&gt;
 
 &lt;table style=&#34;width:100%;margin-bottom:-35px&#34; border=&#34;0&#34;&gt;
@@ -297,7 +297,7 @@ $$
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;font style=&#34;font-size:28px&#34;&gt;
 
-The term &lt;font color=&#34;lightblue&#34;&gt;&lt;i&gt;hypervisor&lt;/i&gt;&lt;/font&gt; denotes a program that controls &lt;font color=&#34;orchid&#34;&gt;&lt;b&gt;supervisors&lt;/b&gt;&lt;/font&gt;&lt;br/&gt;i.e., they supervise the supervisors (OS Kernels)
+The term &lt;font color=&#34;lightblue&#34;&gt;&lt;i&gt;hypervisor&lt;/i&gt;&lt;/font&gt; denotes a program that controls &lt;font color=&#34;orchid&#34;&gt;&lt;b&gt;supervisors&lt;/b&gt;&lt;/font&gt;&lt;br/&gt;i.e., they supervise the supervisors (OS &lt;font color=&#34;#f7de9c&#34;&gt;Kernels&lt;/font&gt;)
 &lt;/font&gt;
 
 
@@ -367,7 +367,7 @@ Modern x86 Intel and AMD CPUs support &lt;i&gt;x86 virtualization&lt;/i&gt;
 
 &lt;i&gt;
 
-$\Rightarrow$ This provides a Guest OS access to HW in $\sc{Ring}$ - $0$
+  $\Rightarrow$ This provides a &lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; OS access to HW in $\sc{Ring}$ - $0$
 
 &lt;/i&gt;
 
@@ -377,7 +377,7 @@ How? Both Intel VT-x and AMD SVM insert a higher privilege level, $\sc{Ring}$ - 
 
 &lt;i&gt;
 
-$\Rightarrow$ Guest OS runs at intended privilege $\sc{(Ring}$ - $0)$
+$\Rightarrow$ &lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; OS runs at intended privilege $\sc{(Ring}$ - $0)$
 $\Rightarrow$ VMM runs in the **&#34;Root Mode&#34;** ring $\sc{(Ring}$ - $-1)$
 
 &lt;/i&gt;
@@ -403,7 +403,7 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
   
   $$
   \large\textbf{Type-1} \\
-  [\ \sc{NATIVE,\ BARE-METAL\ \ HYPERVISOR}\ ]\\
+  [\ \sc{NATIVE,\ BARE-METAL\ \ HYPERVISORS}\ ]\\
   $$
   &lt;/figcaption&gt;
   
@@ -435,9 +435,9 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
   &lt;/center&gt;
   &lt;/figure&gt;
  
-**$\rightarrow$** $[\dots]$ securely multiplexes the processor between Guests
-**$\rightarrow$** $[\dots]$ runs in privileged mode and enforces protection for memory and IO ports
-**$\rightarrow$** $[\dots]$ allocates$/$manages resources and implements the virtualization layer
+**$\rightarrow$** $[\dots]$ securely multiplex the processor between &lt;font color=&#34;#a52a2a&#34;&gt;Guests&lt;/font&gt;
+**$\rightarrow$** $[\dots]$ run in privileged mode and enforces protection for memory and IO ports
+**$\rightarrow$** $[\dots]$ allocate$/$manage resources and implements the virtualization layer
 
 &lt;br/&gt;
 
@@ -454,14 +454,14 @@ _e.g.,_ ESXi, QEMU, KVM, Xen Server
   
   $$
   \large\textbf{Type-2} \\
-  [\ \sc{HOSTED\ HYPERVISOR}\ ]\\
+  [\ \sc{HOSTED\ HYPERVISORS}\ ]\\
   $$
   
   &lt;/figcaption&gt;
   
   ---
   &lt;!--width=&#34;371pt&#34; height=&#34;187pt&#34;--&gt;
-  &lt;svg width=&#34;240pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 371.00 186.80&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
+  &lt;svg width=&#34;241pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 371.00 186.80&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 182.8)&#34;&gt;
   &lt;polygon fill=&#34;#a52a2a&#34; stroke=&#34;transparent&#34; points=&#34;11.5,-145.8 11.5,-171.8 94.5,-171.8 94.5,-145.8 11.5,-145.8&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-147.3 13,-170.3 93,-170.3 93,-147.3 13,-147.3&#34;&gt;&lt;/polygon&gt;
@@ -493,7 +493,7 @@ _e.g.,_ ESXi, QEMU, KVM, Xen Server
 
 **$\rightarrow$** $[\dots]$ are installed and operate via OS-level virtualization
 **$\rightarrow$** $[\dots]$ act and operate as any other userspace process
-**$\rightarrow$** $[\dots]$ leverage the OS kernel to enforce (userspace) isolation of Guest resources (CPU/MEM/etc.)
+**$\rightarrow$** $[\dots]$ leverage the OS &lt;font color=&#34;#f7de9c&#34;&gt;kernel&lt;/font&gt; to enforce (userspace) isolation of &lt;font color=&#34;a52a2a&#34;&gt;Guest&lt;/font&gt; resources (CPU/MEM/etc.)
 
 &lt;br/&gt;
 
@@ -508,7 +508,7 @@ _e.g.,_ Virtualbox, VMWare Fusion, QEMU, KVM, Docker, LXC, chroot
  
   $$
   \large\textbf{Type-X} \\
-  [\ \sc{HYBRID\ HYPERVISOR}\ ]\\
+  [\ \sc{HYBRID\ HYPERVISORS}\ ]\\
   $$
  
   &lt;/figcaption&gt; 
@@ -545,10 +545,10 @@ _e.g.,_ Virtualbox, VMWare Fusion, QEMU, KVM, Docker, LXC, chroot
   &lt;/figure&gt;
  
 
-**$\rightarrow$** $[\dots]$ combines attributes of Type-1 and Type-2 
-**$\rightarrow$** $[\dots]$ runs as a &#34;thin&#34; hypervisor managed by a service OS 
-**$\rightarrow$** $[\dots]$ manager CPU and MEM directly
-**$\rightarrow$** $[\dots]$ provide Guests access to (para-virtualized) I/O devices through a service OS
+**$\rightarrow$** $[\dots]$ combine attributes of Type-1 and Type-2 
+**$\rightarrow$** $[\dots]$ run as a &#34;thin&#34; &lt;font color=&#34;lightblue&#34;&gt;hypervisor&lt;/font&gt; managed by a service OS 
+**$\rightarrow$** $[\dots]$ manage CPU and MEM directly
+**$\rightarrow$** $[\dots]$ provide &lt;font color=&#34;#a52a2a&#34;&gt;Guests&lt;/font&gt; access to (para-virtualized) I/O devices through a service OS
 
 &lt;br/&gt;&lt;br/&gt;
 
@@ -564,35 +564,25 @@ _e.g.,_ Microsoft Hyper-V
 
 ---
 
-# Microsoft Hyper-V
-
+# Hyper-V
 
 ---
 
 ## Hyper-V: An Overview
 
-- High-Level Architecture
-- Where is it used? (_Local v. Azure_)
-- Components / How it works
+&lt;br/&gt;
+&lt;font style=&#34;font-size:22pt&#34;&gt;
 
----
+The Hyper-V Core is composed of the &lt;font color=&#34;lightblue&#34;&gt;hypervisor&lt;/font&gt; kernel, loader, boot driver, and debugger transport
+
+
+The Hyper-V Virtualization Stack and VMM reside in the &lt;font color=&#34;orchid&#34;&gt;Root&lt;/font&gt; OS
+
+&lt;br/&gt;
 
 &lt;figure&gt;&lt;center&gt;
-&lt;figcaption style=&#34;font-size:16pt;margin:-10px&#34;&gt;
-
-$$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
-
-$$
-\sc{HYPER-V}\\
-\sc{ABSTRACTED\ ARCHITECTURE}
-$$
-
-&lt;/figcaption&gt;
-
-
-
 &lt;!-- width=&#34;823pt&#34; height=&#34;295pt&#34;--&gt;
-  &lt;svg width=&#34;423pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 823.00 295.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
+  &lt;svg width=&#34;523pt&#34; height=&#34;&#34; viewBox=&#34;0.00 0.00 823.00 295.00&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
   &lt;g id=&#34;graph0&#34; class=&#34;graph&#34; transform=&#34;scale(1 1) rotate(0) translate(4 291)&#34;&gt;
   &lt;polygon fill=&#34;none&#34; stroke=&#34;#000000&#34; stroke-width=&#34;3&#34; points=&#34;13,-192 13,-278 224,-278 224,-192 13,-192&#34;&gt;&lt;/polygon&gt;
   &lt;polygon fill=&#34;#da70d6&#34; stroke=&#34;transparent&#34; stroke-width=&#34;3&#34; points=&#34;16.5,-195.5 16.5,-274.5 220.5,-274.5 220.5,-195.5 16.5,-195.5&#34;&gt;&lt;/polygon&gt;
@@ -619,10 +609,18 @@ $$
   &lt;/g&gt;
   &lt;/g&gt;
   &lt;/svg&gt;
+&lt;figcaption style=&#34;font-size:16pt;margin-top:-110px&#34;&gt;
 
+$$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
+
+$$
+\sc{HYPER-V}\\
+\sc{ABSTRACTED\ ARCHITECTURE}
+$$
+
+&lt;/figcaption&gt;
 &lt;/center&gt;
 &lt;/figure&gt;
-&lt;br/&gt;
 
 ---
 
@@ -923,17 +921,20 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
 ---
 
-## Hyper-V: Internals
+## Hyper-V: IPC
 
-- Deeper Architecture
-- Interactions between components
-- Communication Channels
-  - VMBus
-  - Hypercalls
+&lt;br/&gt;&lt;br/&gt;
+
+All components communication via
+&lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; and/or &lt;font color=&#34;lightblue&#34;&gt;Hypercalls&lt;/font&gt;
+
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
 
 ---
 
-### Communication Channels: VMBus
+#### Communication Channels: &lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt;
 
 $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
@@ -1053,12 +1054,121 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
 ---
 
-### Communication Channels: Hypercalls
+#### Communication Channels: &lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt;
+&lt;font style=&#34;font-size:18.5pt&#34;&gt;
+Paritions/Components interact with &lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; through one of three (3) abstraction layers:
+&lt;/font&gt;
+
+&lt;font style=&#34;font-size:18pt&#34;&gt;
+&lt;center&gt;
+
+&lt;u&gt;&lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; Kernel-Mode Client Library (KMCL)&lt;/u&gt;
+
+&lt;font style=&#34;font-size:14pt&#34;&gt;
+
+  - Used by VSPs
+  - Architecture based on _callbacks_ (upon receive, trigger action)
+
+&lt;/font&gt;
+
+&lt;u&gt;&lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; Pipes&lt;/u&gt;
+  
+&lt;font style=&#34;font-size:14pt&#34;&gt;
+  
+  - Most common interface used via userspace
+  - Service Components creates &#34;channels&#34; that allows interactions
+    - File RW
+    - I/O Completion
+
+&lt;/font&gt;
+
+&lt;u&gt;&lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; Sockets&lt;/u&gt;
+
+&lt;font style=&#34;font-size:14pt&#34;&gt;
+  
+  - Modeled after TCP over &lt;font color=&#34;#fed15d&#34;&gt;VMBus&lt;/font&gt; with a transportation layer that&#39;s much simpler than IP
+  - HvSock allows for communication between Host and &lt;font color=&#34;#a52a2a&#34;&gt;Guests&lt;/font&gt; using BSD-style socket APIs 
+  - Byte-stream based communication mechanism
+
+&lt;/font&gt;
+&lt;/font&gt;
+&lt;/center&gt;
+&lt;br/&gt;
+
+---
+
+
+#### Communication Channels: &lt;font color=&#34;lightblue&#34;&gt;Hypercall&lt;/font&gt; Interface
+
+&lt;table border=&#34;0&#34; cellborder=&#34;0&#34;
+  style=&#34;margin-top:-115px;margin-left:-100px;font-size:20pt;width:120%&#34;&gt;
+ 
+$$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
+ 
+ &lt;tr&gt;
+ &lt;td colspan=&#34;2&#34;&gt;&lt;center&gt;
+
+&lt;font style=&#34;font-size:24pt&#34;&gt;&lt;i&gt;Allows code running under Hyper-V to call into the Hyper-V &lt;font color=&#34;#f7de9c&#34;&gt;Kernel&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;
+
+$\hspace{6em}\Rightarrow$ Either for management tasks, such as creating new partitions, getting
+$\hspace{7em}$ tracing, debugging, and statistics information, installing intercepts, $\dots$ 
+
+$\hspace{6em}\Rightarrow$ Or for inter-partition communication using ports
+
+$\hspace{6em}\Rightarrow$ Or for providing enlightenments for the &lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; OS
+
+$\hspace{6em}\Rightarrow$ Can only be done by code running at $\sc{Ring}$ - $0$
+&lt;/td&gt;
+
+ 
+ &lt;/tr&gt;
+ 
+ 
+  &lt;tr&gt;
+  &lt;td width=&#34;1&#34;&gt;
+  
+&lt;font style=&#34;font-size:24pt&#34;&gt;&lt;font color=&#34;lightblue&#34;&gt;Hypercalls&lt;/font&gt; can be &lt;i&gt;simple&lt;/i&gt; or &lt;i&gt;repeat&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;
+
+$\hspace{0.5em}\Rightarrow$ _Simple_ calls perform a **single
+$\hspace{2em}$operation** with fixed-size input  
+
+$\hspace{0.5em}\Rightarrow$ _Repeat_ calls perform **repeated
+$\hspace{2em}$operations** based on a starting
+$\hspace{2em}$index and count
+
+&lt;/td&gt;
+&lt;td width=&#34;1&#34;&gt;
+
+&lt;font style=&#34;font-size:24pt&#34;&gt;&lt;i&gt;Three calling conventions&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;
+
+$\Rightarrow$ Pass arguments in in/out data structure  
+$\Rightarrow$ Pass arguments in x64 integer registers  
+$\Rightarrow$ Pass arguments in x64 XMM vector registers
+
+&lt;br/&gt;&lt;br/&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+
+---
+
+#### Communication Channels: &lt;font color=&#34;lightblue&#34;&gt;Hypercall&lt;/font&gt; Interface
+
+&lt;br/&gt;&lt;br/&gt;
+
+Unfortunately, interacting with Hyper-V requires some knowledge of Windows driver development 
+
+$\hspace{3em}\dots$ and, especially, PnP Driver Development
+
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+
 
 ---
 
 ## Hyper-V: Exploitation
-&lt;font style=&#34;font-size:48px&#34;&gt;&lt;u&gt;Hyper-V Attack Surface: Goal&lt;/u&gt;&lt;/font&gt;
+&lt;font style=&#34;font-size:48px&#34;&gt;&lt;u&gt;Hyper-V Attack Surface: Perspective &amp; Target&lt;/u&gt;&lt;/font&gt;
 
 $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 &lt;table style=&#34;margin-top:-80px;margin-bottom:-40px&#34; border=&#34;20&#34;&gt;
@@ -1066,7 +1176,7 @@ $$\def\sc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$$
 
 $$
 \sc{Ring-\Gamma}\ \ \Longrightarrow\ \begin{cases}
-        \sc{Ring\ \ -}\ \ 0  \quad &amp;\text{if} \,\ \Gamma \leq 3 \\
+        \sc{Ring\ \ -}\ \ 0  \quad &amp;\text{if} \,\ \Gamma \equiv 3 \\
         \sc{Ring\ \ -}\ -1 \quad &amp;\text{if} \,\ \Gamma \equiv 0
      \end{cases}
 $$
@@ -1079,11 +1189,11 @@ $$
 &lt;tr&gt;
 &lt;td width=&#34;&#34;&gt;
 &lt;center&gt;
-Guest-to-Host (VMBus)
+&lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; ⇒ &lt;font color=&#34;orchid&#34;&gt;Host/Root&lt;/font&gt; (VMBus)
 &lt;/center&gt;
 &lt;/td&gt;&lt;td&gt;
 &lt;center&gt;
-Guest-to-Host (Hypercalls)
+&lt;font color=&#34;#a52a2a&#34;&gt;Guest&lt;/font&gt; ⇒ &lt;font color=&#34;lightblue&#34;&gt;Hypervisor&lt;/font&gt; (Hypercalls)
 &lt;/center&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1092,7 +1202,7 @@ Guest-to-Host (Hypercalls)
 &lt;td width=&#34;&#34;&gt;
 &lt;center&gt;
 
-&lt;i&gt;Target:&lt;/i&gt; Kernel or Userspace&lt;br/&gt;($\sc{Ring-0}$ or $\sc{Ring-3}$, respectively)
+&lt;i&gt;Target:&lt;/i&gt; Root Partition&lt;br/&gt;$(\sc{Ring-0})$
 &lt;/center&gt;
 &lt;/td&gt;
 
@@ -1152,10 +1262,10 @@ $\textit{fin}$</div>
                                 <span class="ui-lastchangeuser" data-profile="bynx">&thinsp;<a class="ui-user-icon small" style="background-image: url(https://avatars.githubusercontent.com/u/3212079?s=96);" target="_blank"></a></span>
                             
                             &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                            <span class="ui-lastchange text-uppercase" data-createtime="Mon Oct 11 2021 23:40:24 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 26 2021 01:22:57 GMT+0000 (Coordinated Universal Time)"></span>
+                            <span class="ui-lastchange text-uppercase" data-createtime="Mon Oct 11 2021 23:40:24 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 26 2021 18:45:20 GMT+0000 (Coordinated Universal Time)"></span>
                         </span>
                         <span class="pull-right">
-                            882 views
+                            1173 views
                             <a href="#" class="ui-edit" title="Edit this note">
                                 <i class="fa fa-fw fa-pencil"></i>
                             </a>
@@ -1174,7 +1284,7 @@ $\textit{fin}$</div>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60728495-1"></script>
-<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">
+<script nonce="d4e37d60-9d37-40c0-8bf5-ebf38b45a6a9">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -1182,7 +1292,7 @@ $\textit{fin}$</div>
     gtag('config', 'UA-60728495-1', {'user_id': userid});
 </script>
 <script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js" crossorigin="anonymous"></script>
-<script nonce="9396641a-6eba-4437-8d28-56413fc42bdf">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
+<script nonce="d4e37d60-9d37-40c0-8bf5-ebf38b45a6a9">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
 
 
         
@@ -1194,7 +1304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <script src="https://hackmd.io/api/i18n.js"></script>
         
-         <script src="https://assets.hackmd.io/build/font-vendor.5ba1bda23ba5a8acfb08.js" defer="defer"></script><script src="https://assets.hackmd.io/build/common-vendor.8c24b0f76939219a3997.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-vendor.939c8992072deadd5b93.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-common.9248c9f6b9ee9364e53e.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide.98362ebfb3b5e553b5a7.js" defer="defer"></script>
+         <script src="https://assets.hackmd.io/build/font-vendor.5ba1bda23ba5a8acfb08.js" defer="defer"></script><script src="https://assets.hackmd.io/build/common-vendor.8c24b0f76939219a3997.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-vendor.939c8992072deadd5b93.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-common.9248c9f6b9ee9364e53e.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide.611091573b4dcfbba80f.js" defer="defer"></script>
         
     </body>
 </html>
